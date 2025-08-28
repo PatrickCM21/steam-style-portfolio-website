@@ -12,9 +12,10 @@ export default function Header() {
             <div className={`sidebar ${navOpen ? 'is-open' : ""}`}>
                 <div id='sidebar-profile'>
                     <img src="CodingCockatoo.jpg" alt='profile picture'></img>
+                    <p>Coding Cockatoo</p>
                 </div>
-                <a>Store</a>
-                <a>Community</a>
+                <a href='#'>Store</a>
+                <a href='#'>Community</a>
             </div>
             { navOpen && <button className='grey-out' onClick={changeSideNav}></button>}
             <header>
