@@ -1,20 +1,69 @@
 
 header {
-  background-color: #171d25;
-  color: #dcdedf;
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  height: 85px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-color: #171d25;
+    color: #dcdedf;
+    width: 100%;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.sidebar-btn {
+    all: unset
+}
+
+.sidebar {
+    position: absolute;
+    width: 140px;
+    height: 100%;
+    background-color: #171a21;
+    z-index: 20;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.sidebar.is-open {
+    transform: translateX(0);
+}
+
+.sidebar-btn > img {
+    width: 30px;
+    height: 20px;
+    display: none;
+    cursor: pointer;
+
+}
+
+#sidebar-profile > img {
+    width: 25px;
+    height: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+    .sidebar-btn > img {
+        display: block;
+    }
+    .sidebar-btn {
+        position: absolute;
+        left: 4px;
+    }
+    nav {
+        display: none;
+    }
+    #profile {
+        display: none;
+    }
+}
+
+.grey-out {
+    all: unset;
+    min-height: 100vh; 
+    background: rgba(67, 86, 100, 0.15); 
+    position: fixed;
+    inset: 0;
+    z-index: 10;    
 }
 
 nav > ul {
@@ -44,6 +93,8 @@ ul > li {
     font-size: 10px;
     font-weight: 300;
     opacity: 0;
+    box-shadow: 1px 1px 4px black;
+    text-align: center;
 }
 
 .dropdown-content a {
@@ -66,6 +117,18 @@ ul > li {
 .dropdown-content a:hover{
     background-color: #dcdedf;
     color: grey
+}
+
+.selected {
+    color: #1a9fff !important;
+}
+
+.selected > hr {
+    position: absolute;
+    margin: 0;
+    border: 1.5px solid #1a9fff;
+    border-radius: 2px;
+    width: 97%;
 }
 
 #maets-logo {
