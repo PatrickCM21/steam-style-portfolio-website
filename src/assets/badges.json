@@ -1,0 +1,37 @@
+[
+    {
+        "name": "React",
+        "src": "badge_icons/React.svg",
+        "description": "Created this website using it!"
+    },
+    {
+        "name": "HTML",
+        "src": "badge_icons/HTML.png",
+        "description": "Created this website and the coding cockatoo website hosting my other apps."
+    },
+    {
+        "name": "CSS",
+        "src": "badge_icons/CSS.svg",
+        "description": "Created this website and the coding cockatoo website hosting my other apps."
+    },
+    {
+        "name": "JS",
+        "src": "badge_icons/JS.png",
+        "description": "Created this website and the coding cockatoo website hosting my other apps. Also through uni projects."
+    },
+    {
+        "name": "Python",
+        "src": "badge_icons/Python.png",
+        "description": "Used with Flask to create backend for coding cockatoo website. Used to develop Discord Bot."
+    },
+    {
+        "name": "C",
+        "src": "badge_icons/C.png",
+        "description": "Learnt throughout various uni subjects."
+    },
+    {
+        "name": "Gamemaker",
+        "src": "badge_icons/Gamemaker.jpg",
+        "description": "Used to create fully-fledged narrative video game for my partner."
+    }
+]

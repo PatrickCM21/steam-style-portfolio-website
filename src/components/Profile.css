@@ -1,9 +1,11 @@
-#profile-block {
+main {
     background-color: #20212d;
     width: 600px;
     height: 100%;
     margin: 0 auto;
+}
 
+#profile-block {
     display: flex;
     flex-direction: column;
 
@@ -36,13 +38,13 @@ p.name > img {
 
 .name-description > p {
     font-size: 10px;
-    color: rgb(215, 215, 215);
+    color: var(--custom-grey);
 }
 
 .profile-header > img {
     width: 20%;
     height: auto;
-    border: 3px solid rgb(70, 199, 208);
+    border: 3px solid var(--border-blue);
     margin-left: 12px;
 }
 
@@ -91,4 +93,64 @@ p.name > img {
     margin: 0;
     font-size: 10px;
     margin-top: 3px;
+}
+
+/* Main content block */
+
+.content-block {
+    display: flex;
+    gap: 10px;
+    margin: 20px 10px;
+}
+
+/* Showcases */
+
+.showcases {
+    width: 70%;
+}
+
+.showcase-entry {
+    margin-bottom: 20px;
+}
+
+/* Side-info bar */
+
+.side-info-bar {
+    width: 30%;
+    background-color:rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    height: fit-content;
+}
+
+.side-info-bar .work-status {
+    color: var(--border-blue);
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.side-info-bar-title {
+    font-size: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+.side-info-bar-num {
+    font-weight: 200;
+    color:  var(--custom-grey);
+    font-size: 18px;
+    margin-left: 3px;
+}
+.badge-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.badge-list > img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    padding: fit;
 }

@@ -47,7 +47,7 @@ header {
 #sidebar-profile > img {
     width: 24px;
     height: 24px;
-    border: 1.5px solid #46c7d0;
+    border: 1.5px solid var(--border-blue);
     margin-left: 16px;
 }
 
@@ -182,5 +182,5 @@ ul > li {
     margin-left: 30px;
     width: 24px;
     height: 24px;
-    border: 1.5px solid #46c7d0;
+    border: 1.5px solid var(--border-blue);
 }

@@ -1,3 +1,8 @@
+:root {
+    --custom-grey: rgb(215, 215, 215);
+    --border-blue: rgb(70, 199, 208);
+}
+
 html, body {
   margin: 0;
   padding: 0;
