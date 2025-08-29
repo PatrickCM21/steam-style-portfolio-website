@@ -1,13 +1,15 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Confetti from 'react-confetti'
 import { useWindowSize } from 'react-use'
 
 import badges from '../assets/badges.json'
+import featureProjects from '../assets/projects.json'
 
 import Showcase from './Showcase'
 import ShowcaseHeader from './ShowcaseHeader'
 import ShowcaseContent from './ShowcaseContent'
 import ShowcaseContentText from './ShowcaseContentText'
+import ShowcaseSlide from './ShowcaseSlide';
 import './Showcase.css'
 
 export default function Profile() {
@@ -18,9 +20,23 @@ export default function Profile() {
 
     const badgeElements = badges.map(badge => {
         return (
-            <img src={badge.src} key={badge.name} name={badge.name} alt={`${badge.name} logo`}></img>
+            <div className='tooltip'>
+                <img className='badge-icon' src={badge.src} key={badge.name} name={badge.name} alt={`${badge.name} logo`}> 
+                </img>
+                <p className='tooltip-text'>{badge.name}</p>    
+            </div>
         )
     })
+    const featuredProjectElements = featureProjects.filter(proj => proj.featured === true)
+    .map(project => {
+        return <div>
+            <a href={project.link} key={project.name}>
+                <img className='showcase-image' src={project.src}></img>
+            </a>
+        </div>
+    })
+
+
     
     const { width, height } = useWindowSize()
     const confettiAdapted = <Confetti width={width} height={height}/>
@@ -33,7 +49,7 @@ export default function Profile() {
                     <img src='CodingCockatoo.jpg' alt='profile icon'></img>
                     <section className="name-description">
                         <h2>Coding Cockatoo</h2>
-                        <p class='name'>Patrick Crown-Milliss <img src="au.gif" alt='aus flag'></img> Sydney, Australia </p>
+                        <p className='name'>Patrick Crown-Milliss <img src="au.gif" alt='aus flag'></img> Sydney, Australia </p>
                         <p>Welcome to my profile! Have a great day friendo.</p>
                     </section>
                     <section className="level">
@@ -42,7 +58,7 @@ export default function Profile() {
                             <img src='UNSW.png' alt='UNSW Logo'></img>
                             <p>
                                 Computer Science
-                                <p class='xp'>222 XP</p>
+                                <p className='xp'>222 XP</p>
                             </p>
                             
                         </div>
@@ -54,7 +70,11 @@ export default function Profile() {
                     <Showcase>
                         <ShowcaseHeader>Project Showcase</ShowcaseHeader>
                         <ShowcaseContent>
-
+                            <ShowcaseContentText>Some highlights from my practice projects.</ShowcaseContentText>
+                            <ShowcaseSlide>
+                                {featuredProjectElements}
+                            </ShowcaseSlide>
+                            
                         </ShowcaseContent>
                     </Showcase>
                     <Showcase>

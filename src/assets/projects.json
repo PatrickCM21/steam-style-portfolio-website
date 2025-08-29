@@ -1,0 +1,33 @@
+[
+    {
+        "name": "AI Dinner Table Conversation",
+        "src": "projects_icons/AIDinner.png",
+        "link": "https://curiouscocky2.pythonanywhere.com/dinner",
+        "featured": true
+    },
+    {
+        "name": "Cockatoo Clicker",
+        "src": "projects_icons/cockatooClicker.png",
+        "link": "https://curiouscocky2.pythonanywhere.com/cockatoo_clicker",
+        "featured": true
+    },
+    {
+        "name": "Ghost Notes",
+        "src": "projects_icons/ghostNotes.png",
+        "link": "https://curiouscocky2.pythonanywhere.com/ghost_notes",
+        "featured": true
+    },
+    {
+        "name": "Steam Hidden Gem Finder",
+        "src": "projects_icons/hiddenGemFinder.png",
+        "link": "https://curiouscocky2.pythonanywhere.com/steam_gems",
+        "featured": true
+    }
+    ,
+    {
+        "name": "Sushi Cat - Discord Bot",
+        "src": "projects_icons/sushiCatDiscordBot.png",
+        "link": "#",
+        "featured": true
+    }
+]
