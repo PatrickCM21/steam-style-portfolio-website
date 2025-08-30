@@ -1,0 +1,29 @@
+[
+    {
+        "role": "Bachelor of Computer Science",
+        "src": "UNSW.jpeg",
+        "description": ["WAM - 88.33"],
+        "time": "Jan 2025 - Present"
+    },
+    {
+        "role": "Bachelor of Politics, Philosophy, and Economics",
+        "src": "UNSW.jpeg",
+        "description": [
+            "2024 ADA Dean's List Recipient",
+            "Leadership Foundations Course Certification 2022",
+            "O-Week Yellow Shirts Squad Leader 2024"
+        ],
+        "time": "Jan 2021 - Dec 2024"
+    },
+    {
+        "role": "HSC",
+        "src": "eppingBoys.gif",
+        "description": [
+            "6th in NSW For Informations, Processes, and Technology Course",
+            "HSC All-Rounder Award",
+            "Principle's Service Award",
+            "2019 Highly Commended Team at National Model UN Competition in Canberra"
+        ],
+        "time": "Jan 2015 - Dec 2020"
+    }
+]

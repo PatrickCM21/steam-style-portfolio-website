@@ -7,6 +7,7 @@ import featureProjects from '../assets/projects.json'
 import socials from '../assets/contacts.json'
 import skills from '../assets/skills.json'
 import work from '../assets/work.json'
+import education from '../assets/education.json'
 
 import Showcase from './Showcase'
 import ShowcaseHeader from './ShowcaseHeader'
@@ -61,6 +62,12 @@ export default function Profile() {
             <ShowcaseGridItem job={job}/>
         )
     })
+
+    const educationElements = education.map(degree => {
+        return (
+            <ShowcaseGridItem job={degree}/>
+        )
+    })
     
     const { width, height } = useWindowSize()
     const confettiAdapted = <Confetti width={width} height={height}/>
@@ -74,7 +81,7 @@ export default function Profile() {
                     <section className="name-description">
                         <h2>Coding Cockatoo</h2>
                         <p className='name'>Patrick Crown-Milliss <img src="au.gif" alt='aus flag'></img> Sydney, Australia </p>
-                        <p>Welcome to my profile! You can contact me anywhere below.</p>
+                        <p>Welcome to my profile! You can contact me anywhere below :)</p>
                         <div className='social-links'>
                             {socialsElements}
                         </div>
@@ -97,7 +104,7 @@ export default function Profile() {
                     <Showcase>
                         <ShowcaseHeader>Project Showcase</ShowcaseHeader>
                         <ShowcaseContent>
-                            <ShowcaseContentText>Some highlights from my practice projects.</ShowcaseContentText>
+                            <ShowcaseContentText>Some highlights from my projects!</ShowcaseContentText>
                             <ShowcaseSlide>
                                 {featuredProjectElements}
                             </ShowcaseSlide>
@@ -115,7 +122,11 @@ export default function Profile() {
                     <Showcase>
                         <ShowcaseHeader>Educational History</ShowcaseHeader>
                         <ShowcaseContent>
-
+                            <ShowcaseContent>
+                            <ShowcaseGrid>
+                                {educationElements}
+                            </ShowcaseGrid>
+                        </ShowcaseContent>
                         </ShowcaseContent>
                     </Showcase>
                 </section>

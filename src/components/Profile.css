@@ -20,7 +20,6 @@ main {
     padding-left: 18px;
     margin: 0;
     width: 50%;
-    margin-right: 5px;
 }
 
 p.name {
@@ -39,6 +38,7 @@ p.name > img {
 .name-description > p {
     font-size: 10px;
     color: var(--custom-grey);
+    padding-right: 5px;
 }
 
 .profile-header > img {

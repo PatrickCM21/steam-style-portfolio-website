@@ -10,7 +10,7 @@ export default function ShowcaseGridItem({job}) {
             <img className='showcase-item-icon' src={src} name={role} alt={`${role} ${place} icon`}/>
             <div className="showcase-tooltip-data">
                 <h1 className='showcase-tooltip-header'>{role}</h1>    
-                <h2 className='showcase-tooltip-header'>{place}</h2> 
+                {place && <h2 className='showcase-tooltip-header'>{place}</h2> }
                 <ul>
                     {descriptionPoints}
                 </ul>

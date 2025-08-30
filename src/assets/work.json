@@ -39,14 +39,27 @@
         "time": "Nov 2021 - Apr 2022"
     },
     {
-        "name": "EVATT Model United Nations Convenor & General Volunteer",
+        "role": "NSW Model UN Convenor",
         "place": "UN Youth Australia",
         "type": "Volunteering",
         "src": "work_icons/unYouth.png",
         "description": [
             "Organised a Model United Nations Debating competition with over 20 rounds at host schools involving 400 students across regional and rural NSW.",
-            "Managed an organising committee team of 4 in completion of tasks such as emailing teachers and students, roadtrip logistics, content delivery, and other administrative tasks \n Worked with a chief judge to standardise judging of the competition and train volunteers."
+            "Managed an organising committee team of 4 in completion of tasks such as emailing teachers and students, roadtrip logistics, content delivery, and other administrative tasks.",
+            "Worked with a chief judge to standardise judging of the competition and train volunteers."
         ],
         "time": "Dec 2021 - Dec 2024"
+    }
+    ,
+    {
+        "role": "Conference Panel Director",
+        "place": "ASEAN Society UNSW",
+        "type": "Volunteering",
+        "src": "work_icons/ASEAN.jpg",
+        "description": [
+            "Ran a panel 'The Threat of Information' in 2021 with three experts on the field of disinformation specialising in South East Asia",
+            "Was a discussion host on the 'The Role of Women in South East Asia' discussion panel where i moderated discussion with an expert in the field."
+        ],
+        "time": "March 2021 - Dec 2022"
     }
 ]

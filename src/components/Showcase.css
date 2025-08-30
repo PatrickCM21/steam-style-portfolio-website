@@ -114,13 +114,41 @@
     position: absolute;
     border-radius: 2px;
     z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+    transition-delay: 0.2s;
 
     margin: 0;
     padding: 10px;
-    width: 135px;
+    width: 150px;
 }
 
 .showcase-item-tooltip:hover .showcase-tooltip-data {
     visibility: visible;
+    opacity: 1;
+}
+
+h1.showcase-tooltip-header {
+    font-size: 14px;
+    margin: 0;
+
+}
+
+h2.showcase-tooltip-header {
+    font-size: 12px;
+    padding-bottom: 2px;
+    border-bottom: 0.5px dashed;
+    margin-bottom: 0%;
+
+}
+
+.showcase-tooltip-data > ul {
+    padding: inherit;
+    margin: 0;
+}
+
+.showcase-tooltip-data > ul > li {
+    margin-bottom: 2px;
+    
 }
 
