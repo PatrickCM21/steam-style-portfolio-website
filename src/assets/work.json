@@ -1,0 +1,52 @@
+[
+    {
+        "role": "Clubs and Grants Officer",
+        "place": "Arc @ UNSW",
+        "type": "Employment",
+        "src": "work_icons/arc.png",
+        "description": [
+            "Processed 400+ reaffiliation applications through Salesforce.",
+            "Reviewed and actioned 1000+ grant applications for events and materials for clubs."
+        ],
+        "time": "Dec 2022 - Dec 2023"
+    },
+    {
+        "role": "Maths and Technology Tutor",
+        "place": "myTuition",
+        "type": "Employment",
+        "src": "work_icons/myTuition.jpg",
+        "description": "Tutored dozens of kids across year 11 and 12 in HSC subjects IPT, Mathematics Advanced, and SDD.",
+        "time": "Jan 2021 - Dec 2024"
+    },
+    {
+        "role": "President",
+        "place": "Arts, Design and Architecture Society",
+        "type": "Volunteering",
+        "src": "work_icons/ada.png",
+        "description": [
+            "Organised a team of 60 volunteers, hosting fortnightly meetings, training sessions, and internal events.",
+            "Hosted the inaugural 'ADA Carnival' with faculty and other society support, which featured a dozen stalls, food vendors, music acts, and was attended by over 2,000 UNSW students and staff. Won 'Best Large Event of The Year'.",
+            "Hosted the society's first interfaculty camp which lasted 3 days and orientated 120 first-year ADA students."
+        ],
+        "time": "Nov 2023 - Nov 2024"
+    },
+    {
+        "role": "After-Hours Educator",
+        "place": "Pennant Hills OOSH Care",
+        "type": "Employment",
+        "src": "work_icons/BASC.jpg",
+        "description": "Supported the early learning of dozens of children after school and during holiday periods through engaging them in creative activities with me and their peers.",
+        "time": "Nov 2021 - Apr 2022"
+    },
+    {
+        "name": "EVATT Model United Nations Convenor & General Volunteer",
+        "place": "UN Youth Australia",
+        "type": "Volunteering",
+        "src": "work_icons/unYouth.png",
+        "description": [
+            "Organised a Model United Nations Debating competition with over 20 rounds at host schools involving 400 students across regional and rural NSW.",
+            "Managed an organising committee team of 4 in completion of tasks such as emailing teachers and students, roadtrip logistics, content delivery, and other administrative tasks \n Worked with a chief judge to standardise judging of the competition and train volunteers."
+        ],
+        "time": "Dec 2021 - Dec 2024"
+    }
+]

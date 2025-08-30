@@ -4,12 +4,17 @@ import { useWindowSize } from 'react-use'
 
 import badges from '../assets/badges.json'
 import featureProjects from '../assets/projects.json'
+import socials from '../assets/contacts.json'
+import skills from '../assets/skills.json'
+import work from '../assets/work.json'
 
 import Showcase from './Showcase'
 import ShowcaseHeader from './ShowcaseHeader'
 import ShowcaseContent from './ShowcaseContent'
 import ShowcaseContentText from './ShowcaseContentText'
 import ShowcaseSlide from './ShowcaseSlide';
+import ShowcaseGrid from './ShowcaseGrid'
+import ShowcaseGridItem from './ShowcaseGridItem'
 import './Showcase.css'
 
 export default function Profile() {
@@ -20,7 +25,7 @@ export default function Profile() {
 
     const badgeElements = badges.map(badge => {
         return (
-            <div className='tooltip'>
+            <div className='tooltip' key={badge.name}>
                 <img className='badge-icon' src={badge.src} key={badge.name} name={badge.name} alt={`${badge.name} logo`}> 
                 </img>
                 <p className='tooltip-text'>{badge.name}</p>    
@@ -29,14 +34,33 @@ export default function Profile() {
     })
     const featuredProjectElements = featureProjects.filter(proj => proj.featured === true)
     .map(project => {
-        return <div>
-            <a href={project.link} key={project.name}>
+        return <div key={project.name}>
+            <a href={project.link} >
                 <img className='showcase-image' src={project.src}></img>
             </a>
         </div>
     })
 
+    const socialsElements = socials.map(social => {
+        return <a href={social.link} key={social.type}>
+            <img className="social-img" src={social.src} alt={social.type} ></img>
+        </a>
+    })
 
+    const skillsElements = skills.map(skill => {
+        return (
+            <div className='tooltip' key={skill.name}>
+                <img className='badge-icon' src={skill.src} key={skill.name} name={skill.name} alt={`${skill.name} icon`}></img>
+                <p className='tooltip-text'>{skill.name}</p>    
+            </div>
+        )
+    })
+
+    const workElements = work.map(job => {
+        return (
+            <ShowcaseGridItem job={job}/>
+        )
+    })
     
     const { width, height } = useWindowSize()
     const confettiAdapted = <Confetti width={width} height={height}/>
@@ -50,7 +74,10 @@ export default function Profile() {
                     <section className="name-description">
                         <h2>Coding Cockatoo</h2>
                         <p className='name'>Patrick Crown-Milliss <img src="au.gif" alt='aus flag'></img> Sydney, Australia </p>
-                        <p>Welcome to my profile! Have a great day friendo.</p>
+                        <p>Welcome to my profile! You can contact me anywhere below.</p>
+                        <div className='social-links'>
+                            {socialsElements}
+                        </div>
                     </section>
                     <section className="level">
                         <div>Level <button onClick={increaseLevel}><span class="dot">{level}</span></button></div>
@@ -58,7 +85,7 @@ export default function Profile() {
                             <img src='UNSW.png' alt='UNSW Logo'></img>
                             <p>
                                 Computer Science
-                                <p className='xp'>222 XP</p>
+                                <p className='xp'>88.33 WAM</p>
                             </p>
                             
                         </div>
@@ -78,7 +105,15 @@ export default function Profile() {
                         </ShowcaseContent>
                     </Showcase>
                     <Showcase>
-                        <ShowcaseHeader>Achievement Showcase</ShowcaseHeader>
+                        <ShowcaseHeader>Work and Volunteering Experience</ShowcaseHeader>
+                        <ShowcaseContent>
+                            <ShowcaseGrid>
+                                {workElements}
+                            </ShowcaseGrid>
+                        </ShowcaseContent>
+                    </Showcase>
+                    <Showcase>
+                        <ShowcaseHeader>Educational History</ShowcaseHeader>
                         <ShowcaseContent>
 
                         </ShowcaseContent>
@@ -90,6 +125,12 @@ export default function Profile() {
                         <h4 className='side-info-bar-title'>Technologies <span className='side-info-bar-num'>{badges.length}</span></h4>
                         <div className='badge-list'>
                             {badgeElements}
+                        </div>
+                    </div>
+                    <div className='skills'>
+                        <h4 className='side-info-bar-title'>Skills and Interests<span className='side-info-bar-num'>{skills.length}</span></h4>
+                        <div className='badge-list'>
+                            {skillsElements}
                         </div>
                     </div>
                 </div>

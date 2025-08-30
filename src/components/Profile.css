@@ -1,7 +1,6 @@
 main {
     background-color: #20212d;
     width: 600px;
-    height: 100%;
     margin: 0 auto;
 }
 
@@ -21,6 +20,7 @@ main {
     padding-left: 18px;
     margin: 0;
     width: 50%;
+    margin-right: 5px;
 }
 
 p.name {
@@ -43,7 +43,6 @@ p.name > img {
 
 .profile-header > img {
     width: 20%;
-    height: auto;
     border: 3px solid var(--border-blue);
     margin-left: 12px;
 }
@@ -95,6 +94,16 @@ p.name > img {
     margin-top: 3px;
 }
 
+.social-links {
+    display: flex;
+    gap: 4px;
+}
+
+.social-img {
+    width: 25px;
+    height: auto;
+}
+
 /* Main content block */
 
 .content-block {
@@ -143,6 +152,7 @@ p.name > img {
     font-size: 16px;
     margin-left: 3px;
 }
+
 .badge-list {
     display: flex;
     flex-wrap: wrap;
