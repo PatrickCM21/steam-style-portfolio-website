@@ -2,28 +2,31 @@
     {
         "id": 1,
         "name": "AI Dinner Table Conversation",
-        "src": "projects_icons/AIDinner.png",
+        "src": "/projects_icons/AIDinner.png",
         "link": "https://curiouscocky2.pythonanywhere.com/dinner",
+        "description": "An AI-powered dinner table conversation with whoever you want, alive or dead, real or fictional. You can set the context, discussion, and even reply yourself!",
+        "technologies": ["python", "html", "css", "javascript"],
+        "gameplayImages": ["/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_1.png", "/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_2.png", "/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_3.png", "/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_4.png"],
         "featured": true
     },
     {
         "id": 2,
         "name": "Cockatoo Clicker",
-        "src": "projects_icons/cockatooClicker.png",
+        "src": "/projects_icons/cockatooClicker.png",
         "link": "https://curiouscocky2.pythonanywhere.com/cockatoo_clicker",
         "featured": true
     },
     {
         "id": 3,
         "name": "Ghost Notes",
-        "src": "projects_icons/ghostNotes.png",
+        "src": "/projects_icons/ghostNotes.png",
         "link": "https://curiouscocky2.pythonanywhere.com/ghost_notes",
         "featured": true
     },
     {
         "id": 4,
         "name": "Steam Hidden Gem Finder",
-        "src": "projects_icons/hiddenGemFinder.png",
+        "src": "/projects_icons/hiddenGemFinder.png",
         "link": "https://curiouscocky2.pythonanywhere.com/steam_gems",
         "featured": true
     }
@@ -31,7 +34,7 @@
     {
         "id": 5,
         "name": "Sushi Cat - Discord Bot",
-        "src": "projects_icons/sushiCatDiscordBot.png",
+        "src": "/projects_icons/sushiCatDiscordBot.png",
         "link": "",
         "featured": true
     },
@@ -39,7 +42,7 @@
     
         "id": 6,
         "name": "Gudetama's Adventure",
-        "src": "projects_icons/sushiCatDiscordBot.png",
+        "src": "/projects_icons/sushiCatDiscordBot.png",
         "link": "",
         "featured": false
     }

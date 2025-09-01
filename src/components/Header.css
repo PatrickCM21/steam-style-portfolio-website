@@ -207,7 +207,7 @@ a.selected > hr {
 
 /* Also footer */
 footer > p {
-
+    padding-top: 20px;
     margin: 0 auto;
     max-width: 600px;
     font-size: 8px;

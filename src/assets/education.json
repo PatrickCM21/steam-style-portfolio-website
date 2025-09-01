@@ -1,13 +1,13 @@
 [
     {
         "role": "Bachelor of Computer Science",
-        "src": "UNSW.jpeg",
+        "src": "/UNSW.jpeg",
         "description": ["WAM - 88.33"],
         "time": "Jan 2025 - Present"
     },
     {
         "role": "Bachelor of Politics, Philosophy, and Economics",
-        "src": "UNSW.jpeg",
+        "src": "/UNSW.jpeg",
         "description": [
             "2024 ADA Dean's List Recipient",
             "Leadership Foundations Course Certification 2022",
@@ -17,7 +17,7 @@
     },
     {
         "role": "HSC",
-        "src": "eppingBoys.gif",
+        "src": "/eppingBoys.gif",
         "description": [
             "6th in NSW For Informations, Processes, and Technology Course",
             "HSC All-Rounder Award",

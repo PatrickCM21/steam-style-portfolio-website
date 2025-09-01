@@ -1,22 +1,22 @@
 [
     {
         "name": "HSK 1 - Chinese",
-        "src": "skills_icons/chinese.png"
+        "src": "/skills_icons/chinese.png"
     },
     {
         "name": "Public Speaking",
-        "src": "skills_icons/publicSpeaking.png"
+        "src": "/skills_icons/publicSpeaking.png"
     },
     {
         "name": "Philosophy",
-        "src": "skills_icons/philosophy.png"
+        "src": "/skills_icons/philosophy.png"
     },
     {
         "name": "Gym",
-        "src": "skills_icons/gym.png"
+        "src": "/skills_icons/gym.png"
     },
     {
         "name": "Video Games",
-        "src": "skills_icons/videoGames.png"
+        "src": "/skills_icons/videoGames.png"
     }
 ]

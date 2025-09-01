@@ -74,7 +74,7 @@ export default function Profile() {
     const confettiAdapted = <Confetti width={width} height={height}/>
     
     return (
-        <main>
+        <main className='profile'>
             <section id='profile-block'>
                 {level == 69 && confettiAdapted}
                 <section className="profile-header">

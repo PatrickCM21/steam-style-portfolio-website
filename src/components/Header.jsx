@@ -12,7 +12,7 @@ export default function Header() {
             <div className={`sidebar ${navOpen ? 'is-open' : ""}`}>
                 <div id='sidebar-profile'>
                     <Link to='profile'>
-                        <img src="CodingCockatoo.jpg" alt='profile picture'></img>
+                        <img src="/CodingCockatoo.jpg" alt='profile picture'></img>
                         <p>Coding Cockatoo</p>
                     </Link>
                 </div>
@@ -29,10 +29,10 @@ export default function Header() {
             { navOpen && <button className='grey-out' onClick={changeSideNav}></button>}
             <header>
                 <button onClick={changeSideNav} className="sidebar-btn" >
-                    <img src='header_menu_hamburger.png' alt='side bar nav'></img>
+                    <img src='/header_menu_hamburger.png' alt='side bar nav'></img>
                 </button>
                 <Link to='store'>
-                    <img src="logo.svg" alt="logo" id='maets-logo'></img>
+                    <img src="/logo.svg" alt="logo" id='maets-logo'></img>
                 </Link>
                     <nav>
                         <ul>
@@ -74,7 +74,7 @@ export default function Header() {
                         </ul>
                     </nav>
                 <Link to="profile">
-                    <img src="CodingCockatoo.jpg" id='profile' alt='profile picture'></img>
+                    <img src="/CodingCockatoo.jpg" id='profile' alt='profile picture'></img>
                 </Link>
             </header>
         </>

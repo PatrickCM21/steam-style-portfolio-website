@@ -3,7 +3,7 @@
         "role": "Clubs and Grants Officer",
         "place": "Arc @ UNSW",
         "type": "Employment",
-        "src": "work_icons/arc.png",
+        "src": "/work_icons/arc.png",
         "description": [
             "Processed 400+ reaffiliation applications through Salesforce.",
             "Reviewed and actioned 1000+ grant applications for events and materials for clubs."
@@ -14,7 +14,7 @@
         "role": "Maths and Technology Tutor",
         "place": "myTuition",
         "type": "Employment",
-        "src": "work_icons/myTuition.jpg",
+        "src": "/work_icons/myTuition.jpg",
         "description": "Tutored dozens of kids across year 11 and 12 in HSC subjects IPT, Mathematics Advanced, and SDD.",
         "time": "Jan 2021 - Dec 2024"
     },
@@ -22,7 +22,7 @@
         "role": "President",
         "place": "Arts, Design and Architecture Society",
         "type": "Volunteering",
-        "src": "work_icons/ada.png",
+        "src": "/work_icons/ada.png",
         "description": [
             "Organised a team of 60 volunteers, hosting fortnightly meetings, training sessions, and internal events.",
             "Hosted the inaugural 'ADA Carnival' with faculty and other society support, which featured a dozen stalls, food vendors, music acts, and was attended by over 2,000 UNSW students and staff. Won 'Best Large Event of The Year'.",
@@ -34,7 +34,7 @@
         "role": "After-Hours Educator",
         "place": "Pennant Hills OOSH Care",
         "type": "Employment",
-        "src": "work_icons/BASC.jpg",
+        "src": "/work_icons/BASC.jpg",
         "description": "Supported the early learning of dozens of children after school and during holiday periods through engaging them in creative activities with me and their peers.",
         "time": "Nov 2021 - Apr 2022"
     },
@@ -42,7 +42,7 @@
         "role": "NSW Model UN Convenor",
         "place": "UN Youth Australia",
         "type": "Volunteering",
-        "src": "work_icons/unYouth.png",
+        "src": "/work_icons/unYouth.png",
         "description": [
             "Organised a Model United Nations Debating competition with over 20 rounds at host schools involving 400 students across regional and rural NSW.",
             "Managed an organising committee team of 4 in completion of tasks such as emailing teachers and students, roadtrip logistics, content delivery, and other administrative tasks.",
@@ -55,7 +55,7 @@
         "role": "Conference Panel Director",
         "place": "ASEAN Society UNSW",
         "type": "Volunteering",
-        "src": "work_icons/ASEAN.jpg",
+        "src": "/work_icons/ASEAN.jpg",
         "description": [
             "Ran a panel 'The Threat of Information' in 2021 with three experts on the field of disinformation specialising in South East Asia",
             "Was a discussion host on the 'The Role of Women in South East Asia' discussion panel where i moderated discussion with an expert in the field."

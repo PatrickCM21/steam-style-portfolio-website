@@ -1,12 +1,12 @@
 [
     {
         "type": "LinkedIn",
-        "src": "social_icons/linkedin.png",
+        "src": "/social_icons/linkedin.png",
         "link": "https://www.linkedin.com/in/patrick-crown-milliss-34537a191/"
     },
     {
         "type": "Email",
-        "src": "social_icons/email.png",
+        "src": "/social_icons/email.png",
         "link": "mailto:patrickcrownmilliss@gmail.com"
     }
 ]
