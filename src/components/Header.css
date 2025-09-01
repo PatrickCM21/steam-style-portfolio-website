@@ -28,7 +28,9 @@ header {
 
 }
 
-#sidebar-profile {
+#sidebar-profile > a {
+    all: unset;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,14 +46,14 @@ header {
         inset 0 -4px 4px 0px rgba(0,0,0,0.7);  /* bottom */
 }
 
-#sidebar-profile > img {
+#sidebar-profile > a > img {
     width: 24px;
     height: 24px;
     border: 1.5px solid var(--border-blue);
     margin-left: 16px;
 }
 
-#sidebar-profile > p {
+#sidebar-profile > a > p {
     font-weight: 100;
 
 }
@@ -67,6 +69,14 @@ header {
     margin: 0;
     padding-block: 12px;
 
+}
+
+.sidebar > a:hover {
+    color: white;
+}
+
+.sidebar > a.side-selected {
+    color: white;
 }
 
 .sidebar.is-open {
@@ -125,6 +135,10 @@ ul > li {
     display: inline-block;
 }
 
+.dropdown a {
+    all: unset;
+}
+
 .dropdown-content {
     visibility: hidden;
     position: absolute;
@@ -139,6 +153,7 @@ ul > li {
 }
 
 .dropdown-content a {
+
     margin: 0px;
     display: block;
     height: 15px;
@@ -160,11 +175,16 @@ ul > li {
     color: grey
 }
 
+.dropdown > a > hr {
+    display: none;
+}
+
 .selected {
     color: #1a9fff !important;
 }
 
-.selected > hr {
+a.selected > hr {
+    display: block;
     position: absolute;
     margin: 0;
     border: 1.5px solid #1a9fff;
@@ -183,4 +203,14 @@ ul > li {
     width: 24px;
     height: 24px;
     border: 1.5px solid var(--border-blue);
+}
+
+/* Also footer */
+footer > p {
+
+    margin: 0 auto;
+    max-width: 600px;
+    font-size: 8px;
+    color: var(--custom-grey);
+    text-align: center;
 }

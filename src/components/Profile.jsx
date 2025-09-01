@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Confetti from 'react-confetti'
 import { useWindowSize } from 'react-use'
+import { Link } from 'react-router'
 
 import badges from '../assets/badges.json'
 import featureProjects from '../assets/projects.json'
@@ -9,14 +10,14 @@ import skills from '../assets/skills.json'
 import work from '../assets/work.json'
 import education from '../assets/education.json'
 
-import Showcase from './Showcase'
-import ShowcaseHeader from './ShowcaseHeader'
-import ShowcaseContent from './ShowcaseContent'
-import ShowcaseContentText from './ShowcaseContentText'
-import ShowcaseSlide from './ShowcaseSlide';
-import ShowcaseGrid from './ShowcaseGrid'
-import ShowcaseGridItem from './ShowcaseGridItem'
-import './Showcase.css'
+import Showcase from './Showcase/Showcase'
+import ShowcaseHeader from './Showcase/ShowcaseHeader'
+import ShowcaseContent from './Showcase/ShowcaseContent'
+import ShowcaseContentText from './Showcase/ShowcaseContentText'
+import ShowcaseSlide from './Showcase/ShowcaseSlide';
+import ShowcaseGrid from './Showcase/ShowcaseGrid'
+import ShowcaseGridItem from './Showcase/ShowcaseGridItem'
+import './Showcase/Showcase.css'
 
 export default function Profile() {
     const [level, setLevel] = useState(42)
@@ -35,10 +36,10 @@ export default function Profile() {
     })
     const featuredProjectElements = featureProjects.filter(proj => proj.featured === true)
     .map(project => {
-        return <div key={project.name}>
-            <a href={project.link} >
+        return <div key={project.id}>
+            <Link to={`/store/${project.id}`} >
                 <img className='showcase-image' src={project.src}></img>
-            </a>
+            </Link>
         </div>
     })
 
