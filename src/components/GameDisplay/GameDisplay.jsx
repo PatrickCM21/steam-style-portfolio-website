@@ -43,6 +43,11 @@ export default function GameDisplay({ game }) {
                     <div className='game-display-image-slider'>
                         {gameplayImages}
                     </div>
+                    <div className='game-display-image-scroll'>
+                        <button className='slide-btn slife-btn-left'></button>
+                        <span className='scroll'>scroll</span>
+                        <button className='slide-btn slife-btn-right'></button>
+                    </div>
                 </div>
                 <div className='game-display-data'>
                     <img src={game.src} alt={`${game.name} logo`}></img>
