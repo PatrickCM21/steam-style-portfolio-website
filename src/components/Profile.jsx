@@ -9,6 +9,7 @@ import socials from '../assets/contacts.json'
 import skills from '../assets/skills.json'
 import work from '../assets/work.json'
 import education from '../assets/education.json'
+import achievements from '../assets/achievements.json'
 
 import Showcase from './Showcase/Showcase'
 import ShowcaseHeader from './Showcase/ShowcaseHeader'
@@ -58,6 +59,15 @@ export default function Profile() {
         )
     })
 
+    const achievementsElements = achievements.map(achievement => {
+        return (
+            <div className='tooltip' key={achievement.name}>
+                <img className='achievement-icon' src={achievement.src} key={achievement.name} name={achievement.name} alt={`${achievement.name} icon`}></img>
+                <p className='tooltip-text' style={{fontSize: "8px"}}>{achievement.name}</p>    
+            </div>
+        )
+    })
+
     const workElements = work.map(job => {
         return (
             <ShowcaseGridItem job={job}/>
@@ -93,7 +103,7 @@ export default function Profile() {
                             <img src='UNSW.png' alt='UNSW Logo'></img>
                             <p>
                                 Computer Science
-                                <p className='xp'>88.33 WAM</p>
+                                <p className='xp'>2027 Est. Grad</p>
                             </p>
                             
                         </div>
@@ -105,7 +115,7 @@ export default function Profile() {
                     <Showcase>
                         <ShowcaseHeader>Project Showcase</ShowcaseHeader>
                         <ShowcaseContent>
-                            <ShowcaseContentText>Some highlights from my projects!</ShowcaseContentText>
+                            <ShowcaseContentText>Some highlights from my projects, click them for more details!</ShowcaseContentText>
                             <ShowcaseSlide>
                                 {featuredProjectElements}
                             </ShowcaseSlide>
@@ -124,9 +134,19 @@ export default function Profile() {
                         <ShowcaseHeader>Educational History</ShowcaseHeader>
                         <ShowcaseContent>
                             <ShowcaseContent>
-                            <ShowcaseGrid>
-                                {educationElements}
-                            </ShowcaseGrid>
+                                <ShowcaseGrid>
+                                    {educationElements}
+                                </ShowcaseGrid>
+                        </ShowcaseContent>
+                        </ShowcaseContent>
+                    </Showcase>
+                    <Showcase>
+                        <ShowcaseHeader>Achievements</ShowcaseHeader>
+                        <ShowcaseContent>
+                            <ShowcaseContent>
+                                <ShowcaseGrid>
+                                    {achievementsElements}
+                                </ShowcaseGrid>
                         </ShowcaseContent>
                         </ShowcaseContent>
                     </Showcase>

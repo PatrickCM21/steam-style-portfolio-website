@@ -73,7 +73,7 @@ main.game {
     width: 90%;
 }
 
-.slide-btn {
+.game-slide-btn {
     all: unset;
     cursor: pointer;
     height: 100%;
@@ -85,19 +85,20 @@ main.game {
 
     display: flex;
     align-items: center;
+
     
 }
 
-.slide-btn-left {
+.game-slide-btn-left {
     visibility: hidden;
     transform: rotate(180deg);
 }
 
-.slide-btn-right {
+.game-slide-btn-right {
     right: 0;
 }
 
-.slide-btn:hover {
+.game-slide-btn:hover {
     background-image: linear-gradient(to right, #1d2a3a, #465e71);
 }
 

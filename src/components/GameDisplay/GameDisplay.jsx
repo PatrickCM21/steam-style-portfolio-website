@@ -44,9 +44,9 @@ export default function GameDisplay({ game }) {
                         {gameplayImages}
                     </div>
                     <div className='game-display-image-scroll'>
-                        <button className='slide-btn slife-btn-left'></button>
+                        <button className='game-slide-btn game-slife-btn-left'></button>
                         <span className='scroll'>scroll</span>
-                        <button className='slide-btn slife-btn-right'></button>
+                        <button className='game-slide-btn game-slife-btn-right'></button>
                     </div>
                 </div>
                 <div className='game-display-data'>
