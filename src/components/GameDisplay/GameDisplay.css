@@ -3,7 +3,7 @@
     #1b3a56 0%,
     #1b3a56 40%,
     #1b2838  70%,
-     #1b2838 100%);
+    #1b2838 100%);
     height: 100%;
 
 }
@@ -21,6 +21,8 @@ main.game {
     justify-content: center;
     gap: 12px;
     background-color: rgba(18,28,42, 0.8);
+
+    padding-bottom: 20px;
 }
 
 .game-name {
@@ -38,12 +40,14 @@ main.game {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
+    
 }
 
 .game-display-images > img {
     width: 100%;
     height: 300px;
     object-fit: contain;
+    
 }
 
 .game-display-data > img {
@@ -52,21 +56,24 @@ main.game {
 
 .game-display-image-slider {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: 1px;
     width: 100%;
-    overflow: scroll;
+    overflow-x: scroll;
     height: 75px;
-    overflow: hidden;
+    overflow-y: hidden;
+}
+
+.game-display-image-slider > button > img {
+    border: 2px solid rgba(0.2, 0.2, 0.2, 0)
 
 }
 
 .game-display-image-scroll {
     width: 100%;
-    height: 20px;
+    height: 15px;
     display: flex;
-
+    margin-top: 4px;
 }
 
 .scroll {
@@ -79,18 +86,18 @@ main.game {
     height: 100%;
     width: 5%;
 
-    background-image: linear-gradient(to right, #202b38, #131d28);
-    opacity: 0.95;
+    background-color: #213648;
+    opacity: 0.8;
     z-index: 2;
+    border-radius: 3px;
 
     display: flex;
     align-items: center;
-
+    justify-content: center;
     
 }
 
 .game-slide-btn-left {
-    visibility: hidden;
     transform: rotate(180deg);
 }
 
@@ -99,7 +106,7 @@ main.game {
 }
 
 .game-slide-btn:hover {
-    background-image: linear-gradient(to right, #1d2a3a, #465e71);
+    background-color: #537fa5;
 }
 
 
@@ -115,8 +122,24 @@ main.game {
 }
 
 .img-selected {
-    border: 2px solid var(--border-blue);
+    border: 2px solid var(--border-blue) !important;
 }
+
+.game-display-image-slider::-webkit-scrollbar {
+  height: 8px;                 /* horizontal bar height */
+}
+.game-display-image-slider::-webkit-scrollbar-track {
+    background: #0b1e2a;         /* track color */
+    border-radius: 999px;
+}
+.game-display-image-slider::-webkit-scrollbar-thumb {
+    background: #407899;         /* thumb color */
+    border-radius: 999px;
+}
+.game-display-image-slider::-webkit-scrollbar-thumb:hover {
+    background: #2e5a73;
+}
+
 
 /* data */
 
