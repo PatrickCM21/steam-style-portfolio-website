@@ -71,9 +71,9 @@ main.game {
 
 .game-display-image-scroll {
     width: 100%;
-    height: 15px;
+    height: 16px;
     display: flex;
-    margin-top: 4px;
+    margin-top: -15px;
 }
 
 .scroll {
@@ -87,8 +87,6 @@ main.game {
     width: 5%;
 
     background-color: #213648;
-    opacity: 0.8;
-    z-index: 2;
     border-radius: 3px;
 
     display: flex;
@@ -126,7 +124,7 @@ main.game {
 }
 
 .game-display-image-slider::-webkit-scrollbar {
-  height: 8px;                 /* horizontal bar height */
+    height: 15px;                 /* horizontal bar height */
 }
 .game-display-image-slider::-webkit-scrollbar-track {
     background: #0b1e2a;         /* track color */
@@ -145,7 +143,8 @@ main.game {
 
 .game-display-data {
     width: 35%;
-
+    display: flex;
+    flex-direction: column;
 }
 
 .game-display-data > img {
@@ -158,6 +157,38 @@ main.game {
     font-size: 10px;
     color: white;
     font-weight: 300;
+}
+
+.game-display-data > h3 {
+    color: white;
+    margin: 0;
+    margin-bottom: 2px;
+}
+
+.game-link {
+    all: unset;
+    background-color: #0b1e2a;
+    color: rgb(227, 227, 227);
+    padding: 12px;
+    margin: auto;
+    border-radius: 12px;
+    border: 2px solid rgb(146, 232, 254);
+    cursor: pointer;
+}
+
+.game-link:hover {
+    background-color: #122836;
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(56, 215, 255);
+}
+
+.star-holder {
+    width: fit-content;
+}
+
+.star {
+    all: unset;
+    cursor: pointer;
 }
 
 /* technologies */

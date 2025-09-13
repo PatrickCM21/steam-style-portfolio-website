@@ -6,12 +6,12 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
+
   background-color: #1b2838;
   font-family:"Roboto", Arial, sans-serif;
 }
 #root {
   margin: 0;
   padding: 0;
-  height: 100%;
+
 }

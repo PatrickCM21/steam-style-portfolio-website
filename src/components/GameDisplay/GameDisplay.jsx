@@ -3,12 +3,18 @@ import badges from '../../assets/badges.json'
 import { terminal } from 'virtual:terminal'
 import React from 'react'
 import { IoTriangle } from "react-icons/io5";
+import { IoStar } from "react-icons/io5";
+import { IoStarHalf } from "react-icons/io5";
+import { IoStarOutline } from "react-icons/io5";
 
 
 export default function GameDisplay({ game }) {
     const [selectedImage, setSelectedImage] = React.useState(0);
     const [leftButtonHover, setLeftButtonHover] = React.useState(false)
     const [rightButtonHover, setRightButtonHover] = React.useState(false)
+    const [starCount, setStarCount] = React.useState(-1)
+    const [stars, setStars] = React.useState(Array(5).fill({filled: "none"}))
+    const [savedStarState, setSavedStarState] = React.useState({})
     const scrollerRef = React.useRef(null);
 
     const badgeElements = badges.map(badge => {
@@ -25,6 +31,18 @@ export default function GameDisplay({ game }) {
         setSelectedImage(index)
     }
 
+    React.useEffect(() => {
+        setStars(prev => {
+            return prev.map((star, index) => {
+                if (index <= starCount) {
+                    return {filled: "full"}
+                } else {
+                    return {filled: "none"}
+                }
+            })
+        })
+    }, [starCount])
+
     
     const gameplayImages = game.gameplayImages.map((image, index) => {
         return (
@@ -32,11 +50,48 @@ export default function GameDisplay({ game }) {
                 <img 
                 src={image} 
                 alt={`${game.name} image`} 
-                key={image}
+                key={index}
                 className={selectedImage === index ? "img-selected": null}
                 ></img>
             </button>
         )
+    })
+
+    function updateStars(index) {
+        setStarCount(index)
+        setSavedStarState(index)
+    }
+
+    function starSectionHover() {
+        setSavedStarState(starCount)
+    }
+
+    function starHover(index) {
+        setStarCount(index)
+    }
+
+    function endStarSectionHover() {
+        updateStars(savedStarState)
+    }
+
+    const starsElements = stars.map((star, index) => {
+        if (star.filled === "none") {
+            return <button className="star" 
+                onClick={() => updateStars(index)} 
+                onMouseEnter={() => starHover(index)}
+                key={index}
+                >
+                    <IoStarOutline size={35} color={"white"}/></button>
+        } else if (star.filled === "half") {
+            return <IoStarHalf size={35} color={"gold"}/>
+        } else {
+            return <button className="star" 
+                onClick={() => updateStars(index)} 
+                onMouseEnter={() => starHover(index)} 
+                key={index}
+                >
+                    <IoStar size={35} color={"gold"}/></button>
+        }
     })
 
     function buttonHoverEnter(btn) {
@@ -103,9 +158,9 @@ export default function GameDisplay({ game }) {
                 <div className='game-display-data'>
                     <img src={game.src} alt={`${game.name} logo`}></img>
                     <p>{game.description}</p>
-                    <p>Total Ratings</p>
-                    <div>Stars go here</div>
-                    <a href={game.link}>Play here!</a>
+                    <h3>Total Ratings</h3>
+                    <div className="star-holder" onMouseEnter={starSectionHover} onMouseLeave={endStarSectionHover}>{starsElements}</div>
+                    <a href={game.link} className='game-link' aria-label='link to live version of project'>Play Here!</a>
                 </div>
                 
             </div>
