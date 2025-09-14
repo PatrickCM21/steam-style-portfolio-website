@@ -14,8 +14,9 @@ export default function GameDisplay({ game }) {
     const [rightButtonHover, setRightButtonHover] = React.useState(false)
     const [starCount, setStarCount] = React.useState(-1)
     const [stars, setStars] = React.useState(Array(5).fill({filled: "none"}))
-    const [savedStarState, setSavedStarState] = React.useState({})
+    const [savedStarState, setSavedStarState] = React.useState(-1)
     const scrollerRef = React.useRef(null);
+    const starHovering = React.useRef(false)
 
     const badgeElements = badges.map(badge => {
         return (
@@ -46,11 +47,10 @@ export default function GameDisplay({ game }) {
     
     const gameplayImages = game.gameplayImages.map((image, index) => {
         return (
-            <button onClick={() => updateDisplayedImage(index)}>
+            <button onClick={() => updateDisplayedImage(index)} key={index}>
                 <img 
                 src={image} 
                 alt={`${game.name} image`} 
-                key={index}
                 className={selectedImage === index ? "img-selected": null}
                 ></img>
             </button>
@@ -63,6 +63,8 @@ export default function GameDisplay({ game }) {
     }
 
     function starSectionHover() {
+        if (starHovering) return
+        starHovering.current = true
         setSavedStarState(starCount)
     }
 
@@ -71,6 +73,7 @@ export default function GameDisplay({ game }) {
     }
 
     function endStarSectionHover() {
+        starHovering.current = false
         updateStars(savedStarState)
     }
 
@@ -158,9 +161,9 @@ export default function GameDisplay({ game }) {
                 <div className='game-display-data'>
                     <img src={game.src} alt={`${game.name} logo`}></img>
                     <p>{game.description}</p>
-                    <h3>Total Ratings</h3>
+                    <h3>Your Rating</h3>
                     <div className="star-holder" onMouseEnter={starSectionHover} onMouseLeave={endStarSectionHover}>{starsElements}</div>
-                    <a href={game.link} className='game-link' aria-label='link to live version of project'>Play Here!</a>
+                    {game.link && <a href={game.link} className='game-link' aria-label='link to live version of project'>Play Here!</a>}
                 </div>
                 
             </div>

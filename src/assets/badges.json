@@ -33,5 +33,15 @@
         "name": "Gamemaker",
         "src": "/badge_icons/Gamemaker.jpg",
         "description": "Used to create fully-fledged narrative video game for my partner."
+    },
+    {
+        "name": "ChatGPT API",
+        "src": "/badge_icons/chatGPT.png",
+        "description": "Using the API to create various projects."
+    },
+    {
+        "name": "SQLite",
+        "src": "/badge_icons/SQLite.png",
+        "description": "Used in my 'Ghost Notes' project to store and retreive user notes."
     }
 ]

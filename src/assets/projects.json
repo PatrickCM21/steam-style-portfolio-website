@@ -1,11 +1,21 @@
 [
     {
+        "id": 7,
+        "name": "The Chinese Room Argument",
+        "src": "/projects_icons/chineseRoom.png",
+        "link": "https://chinese-room-ai-game-client.vercel.app/",
+        "description": "Learn John Searl's Chinese Room Argument to find out whether AI will ever become sentient. An AI-powered app built for 'Day of AI Australia'.",
+        "technologies": ["chatgpt api", "html", "css", "javascript", "react"],
+        "gameplayImages": [],
+        "featured": true
+    },
+    {
         "id": 1,
         "name": "AI Dinner Table Conversation",
         "src": "/projects_icons/AIDinner.png",
         "link": "https://curiouscocky2.pythonanywhere.com/dinner",
         "description": "An AI-powered dinner table conversation with whoever you want, alive or dead, real or fictional. You can set the context, discussion, and even reply yourself!",
-        "technologies": ["python", "html", "css", "javascript"],
+        "technologies": ["chatgpt api", "python", "html", "css", "javascript"],
         "gameplayImages": ["/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_1.png", "/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_2.png", "/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_3.png", "/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_4.png"],
         "featured": true
     },
@@ -14,6 +24,9 @@
         "name": "Cockatoo Clicker",
         "src": "/projects_icons/cockatooClicker.png",
         "link": "https://curiouscocky2.pythonanywhere.com/cockatoo_clicker",
+        "description": "Inspired by the classic 'Cookie Clicker', this reimagines world domination by the cookie eaters, cockatoo's. Leverage the power of Kookabura's and luxury cages to exponentially grow the cockatoo population.",
+        "technologies": ["html", "css", "javascript"],
+        "gameplayImages": ["/gameplay_images/cockatoo_clicker/cockatooClickerGameplay_1.png", "/gameplay_images/cockatoo_clicker/cockatooClickerGameplay_2.png", "/gameplay_images/cockatoo_clicker/cockatooClickerGameplay_3.png"],
         "featured": true
     },
     {
@@ -21,6 +34,9 @@
         "name": "Ghost Notes",
         "src": "/projects_icons/ghostNotes.png",
         "link": "https://curiouscocky2.pythonanywhere.com/ghost_notes",
+        "description": "Send and receive a mystery note from a random stranger!",
+        "technologies": ["sqlite", "html", "css", "javascript", "python"],
+        "gameplayImages":  ["/gameplay_images/ghost_notes/ghostNotesGameplay_1.png", "/gameplay_images/ghost_notes/ghostNotesGameplay_2.png", "/gameplay_images/ghost_notes/ghostNotesGameplay_3.png"],
         "featured": true
     },
     {
@@ -28,6 +44,9 @@
         "name": "Steam Hidden Gem Finder",
         "src": "/projects_icons/hiddenGemFinder.png",
         "link": "https://curiouscocky2.pythonanywhere.com/steam_gems",
+        "description": "Have an overflowing Steam library but still don't know what to play? Use this hidden gem finder to find the top rated games you still haven't given a chance!",
+        "technologies": ["html", "css", "javascript", "python"],
+        "gameplayImages": ["/gameplay_images/gem_finder/gemFinderGameplay_1.png", "/gameplay_images/gem_finder/gemFinderGameplay_2.png", "/gameplay_images/gem_finder/gemFinderGameplay_3.png"],
         "featured": true
     }
     ,
@@ -35,15 +54,22 @@
         "id": 5,
         "name": "Sushi Cat - Discord Bot",
         "src": "/projects_icons/sushiCatDiscordBot.png",
+        "description": "A Discord bot which helps you track your to-do-list items, manage your study time with a Pomodoro-style timer, and get a series of random dad jokes to distract you from said study.",
+        "technologies": ["python"],
+        "gameplayImages": ["/gameplay_images/sushi_cat/sushiCatGameplay_1.png", "/gameplay_images/sushi_cat/sushiCatGameplay_2.png", "/gameplay_images/sushi_cat/sushiCatGameplay_3.png"],
         "link": "",
         "featured": true
     },
     {
     
         "id": 6,
-        "name": "Gudetama's Adventure",
-        "src": "/projects_icons/sushiCatDiscordBot.png",
+        "name": "Gudetama's Escape",
+        "src": "/projects_icons/gudetamasEscape.png",
+        "description": "A video game built for my girlfriend to celebrate our first christmas after almost one year of dating. Play as a recently won claw machine plushie who seeks to escape his new home, my uni dorm room.",
+        "technologies": ["gamemaker"],
+        "gameplayImages": ["/gameplay_images/gudetamas_escape/gudetamaGameplay_2.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_3.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_4.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_5.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_6.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_7.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_8.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_9.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_10.png"],
         "link": "",
         "featured": false
     }
+
 ]

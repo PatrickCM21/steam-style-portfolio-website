@@ -103,7 +103,7 @@ export default function Profile() {
                             <img src='UNSW.png' alt='UNSW Logo'></img>
                             <p>
                                 Computer Science
-                                <p className='xp'>2027 Est. Grad</p>
+                                <p className='xp'>2027 Grad</p>
                             </p>
                             
                         </div>
