@@ -6,7 +6,7 @@
         "link": "https://chinese-room-ai-game-client.vercel.app/",
         "description": "Learn John Searl's Chinese Room Argument to find out whether AI will ever become sentient. An AI-powered app built for 'Day of AI Australia'.",
         "technologies": ["chatgpt api", "html", "css", "javascript", "react"],
-        "gameplayImages": [],
+        "gameplayImages": ["/gameplay_images/chinese_room/chineseRoomGameplay_1.png", "/gameplay_images/chinese_room/chineseRoomGameplay_2.png", "/gameplay_images/chinese_room/chineseRoomGameplay_3.png", "/gameplay_images/chinese_room/chineseRoomGameplay_4.png", "/gameplay_images/chinese_room/chineseRoomGameplay_5.png", "/gameplay_images/chinese_room/chineseRoomGameplay_6.png"],
         "featured": true
     },
     {

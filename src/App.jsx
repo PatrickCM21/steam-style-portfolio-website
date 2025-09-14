@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router'
+import { CookiesProvider } from 'react-cookie';
 
 import Layout from './layouts/Layout'
 import './components/Header.css'
@@ -32,7 +33,9 @@ const router = createBrowserRouter(routesArray)
 function App() {
 
   return (
-    <RouterProvider router={router}/>
+    <CookiesProvider defaultSetOptions={{ path: '/' }}>
+      <RouterProvider router={router}/>
+    </CookiesProvider>
   )
 }
 

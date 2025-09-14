@@ -1,6 +1,5 @@
 import games from '../assets/projects.json'
 import { useParams } from 'react-router'
-import { terminal } from 'virtual:terminal'
 
 import GameDisplay from './GameDisplay/GameDisplay'
 

@@ -1,22 +1,26 @@
 import './GameDisplay.css'
 import badges from '../../assets/badges.json'
-import { terminal } from 'virtual:terminal'
 import React from 'react'
 import { IoTriangle } from "react-icons/io5";
 import { IoStar } from "react-icons/io5";
 import { IoStarHalf } from "react-icons/io5";
 import { IoStarOutline } from "react-icons/io5";
-
+import { useCookies  } from 'react-cookie';
 
 export default function GameDisplay({ game }) {
+    const COOKIE = 'gameStars'
+    const [cookies, setCookie, removeCookie] = useCookies([COOKIE]);
+    const starsByGame = cookies[COOKIE] ?? {}
+    const initialGameStars = !starsByGame ? -1 : starsByGame[game.id] ?? -1
+
     const [selectedImage, setSelectedImage] = React.useState(0);
     const [leftButtonHover, setLeftButtonHover] = React.useState(false)
     const [rightButtonHover, setRightButtonHover] = React.useState(false)
-    const [starCount, setStarCount] = React.useState(-1)
+    const [starCount, setStarCount] = React.useState(initialGameStars)
+    const [hoverStarCount, setHoverStarCount] = React.useState(0)
+    const [starHovering, setStarHovering] = React.useState(false)
     const [stars, setStars] = React.useState(Array(5).fill({filled: "none"}))
-    const [savedStarState, setSavedStarState] = React.useState(-1)
     const scrollerRef = React.useRef(null);
-    const starHovering = React.useRef(false)
 
     const badgeElements = badges.map(badge => {
         return (
@@ -35,14 +39,14 @@ export default function GameDisplay({ game }) {
     React.useEffect(() => {
         setStars(prev => {
             return prev.map((star, index) => {
-                if (index <= starCount) {
+                if (index <= (starHovering ? hoverStarCount : starCount)) {
                     return {filled: "full"}
                 } else {
                     return {filled: "none"}
                 }
             })
         })
-    }, [starCount])
+    }, [starCount, hoverStarCount, starHovering])
 
     
     const gameplayImages = game.gameplayImages.map((image, index) => {
@@ -59,22 +63,22 @@ export default function GameDisplay({ game }) {
 
     function updateStars(index) {
         setStarCount(index)
-        setSavedStarState(index)
+        const prevCookie = cookies[COOKIE] ?? {}
+        const cookieName = game.id
+        setCookie(COOKIE, {...prevCookie,  [cookieName]: index}, {path: '/'})
     }
 
     function starSectionHover() {
         if (starHovering) return
-        starHovering.current = true
-        setSavedStarState(starCount)
+        setStarHovering(true)
     }
 
     function starHover(index) {
-        setStarCount(index)
+        setHoverStarCount(index)
     }
 
     function endStarSectionHover() {
-        starHovering.current = false
-        updateStars(savedStarState)
+        setStarHovering(false)
     }
 
     const starsElements = stars.map((star, index) => {
