@@ -1,0 +1,104 @@
+main.store {
+    width: 800px;
+    margin: 0 auto;
+    padding-top: 12px;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.embla {
+    width: 600px;
+    position: relative;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.embla__viewport {
+    overflow: hidden;
+
+}
+
+.embla_button {
+    all: unset;
+
+    top: 50%;
+    bottom: 0;
+    cursor: pointer;
+    height: 25%;
+    width: 20px;
+    position: absolute;
+    opacity: 0.95;
+    z-index: 2;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.embla__prev {
+    left: 0;
+    transform: translate(-120%, -50%);   
+    background-image: linear-gradient(to right, #202b38, #131d28);
+
+}
+
+.embla__next {
+    right: 0;
+    transform: translate(120%, -50%);
+    background-image: linear-gradient(to left, #202b38, #131d28);
+    
+}
+
+.embla__prev:hover {
+    background-image: linear-gradient(to left, #1d2a3a, #465e71);
+}
+
+.embla__next:hover {
+    background-image: linear-gradient(to right, #1d2a3a, #465e71);
+}
+
+.embla__container {
+    display: flex;
+    height: 220px;
+
+}
+
+.embla__slide {
+    all: unset;
+    flex: 0 0 100%;
+    min-width: 0;
+    display: flex;
+    padding: auto;
+    background-color: #0e1821;
+    cursor: pointer;
+}
+
+.slide-main-img {
+    box-shadow: 5px 0 10px -5px rgba(0, 0, 0, 0.5); 
+}
+
+.slide-data {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-inline: 8px;
+}
+
+.slide-data > h2 {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.slide-gameplay-showcase {
+    display: grid;
+    gap: 3px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.slide-gameplay-showcase > img {
+    width: 100%;
+}
+
