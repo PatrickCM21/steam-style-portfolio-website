@@ -139,13 +139,18 @@ ul > li {
     all: unset;
 }
 
+
+.dropdown a > span {
+    font-size: 18px;
+}
+
 .dropdown-content {
     visibility: hidden;
     position: absolute;
     background-color: #3d4450;
     min-width: 40px;
     z-index: 1;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 300;
     opacity: 0;
     box-shadow: 1px 1px 4px black;
@@ -156,7 +161,6 @@ ul > li {
 
     margin: 0px;
     display: block;
-    height: 15px;
     padding: 6px 8px;
 }
 
@@ -200,8 +204,8 @@ a.selected > hr {
 
 #profile {
     margin-left: 30px;
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     border: 1.5px solid var(--border-blue);
 }
 
@@ -210,7 +214,7 @@ footer > p {
     padding-top: 20px;
     margin: 0 auto;
     max-width: 600px;
-    font-size: 8px;
+    font-size: 12px;
     color: var(--custom-grey);
     text-align: center;
 }

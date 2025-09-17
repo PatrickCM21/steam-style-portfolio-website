@@ -63,7 +63,7 @@ export default function Profile() {
         return (
             <div className='tooltip' key={achievement.name}>
                 <img className='achievement-icon' src={achievement.src} key={achievement.name} name={achievement.name} alt={`${achievement.name} icon`}></img>
-                <p className='tooltip-text' style={{fontSize: "8px"}}>{achievement.name}</p>    
+                <p className='tooltip-text' style={{fontSize: "12px"}}>{achievement.name}</p>    
             </div>
         )
     })
@@ -91,14 +91,14 @@ export default function Profile() {
                     <img src='CodingCockatoo.jpg' alt='profile icon'></img>
                     <section className="name-description">
                         <h2>Coding Cockatoo</h2>
-                        <p className='name'>Patrick Crown-Milliss <img src="au.gif" alt='aus flag'></img> Sydney, Australia </p>
+                        <p className='name'>Patrick Crown-Milliss <img src="au.gif" alt='aus flag' ></img> Sydney, Australia </p>
                         <p>Welcome to my profile! You can contact me anywhere below :)</p>
                         <div className='social-links'>
                             {socialsElements}
                         </div>
                     </section>
                     <section className="level">
-                        <div>Level <button onClick={increaseLevel}><span class="dot">{level}</span></button></div>
+                        <div className='level-lbl'>Level <button onClick={increaseLevel}><span class="dot">{level}</span></button></div>
                         <div id='badge'>
                             <img src='UNSW.png' alt='UNSW Logo'></img>
                             <p>

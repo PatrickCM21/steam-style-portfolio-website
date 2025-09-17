@@ -73,7 +73,7 @@ export default function Store() {
     return (
         <main className='store'>
             <section className='featured'>
-                <h4>Featured & Recommended</h4>
+                <h3>Featured & Recommended</h3>
                 <div className="embla" >
                     <div className="embla__viewport" ref={emblaRef}>
                         <div className='embla__container'>
@@ -89,7 +89,7 @@ export default function Store() {
             </section>
             <div className='games-list-background'>
                 <section className='games-list'>
-                    <h4>Other Projects</h4>
+                    <h3>Other Projects</h3>
                     {nonFeaturedGames}
                 </section>
             </div>
