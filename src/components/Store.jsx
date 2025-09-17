@@ -1,20 +1,22 @@
 import projects from '../assets/projects.json'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
-import { useEffect, useCallback, useRef} from 'react'
+import { useEffect, useCallback, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { MdNavigateNext } from "react-icons/md";
-
+import { DotButton, useDotButton } from './Carousel/CarouselButton'
 
 
 export default function Store() {
     const autoplay = useRef(
         Autoplay(
-        { delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true },
+        { delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true },
         // root node is set later by Embla; no need to pass here unless using a custom root
         )
     );
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [autoplay.current])
+
+    const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi)
 
     const scrollPrev = useCallback(() => {
         if (!emblaApi) return
@@ -48,6 +50,30 @@ export default function Store() {
         )
     })
 
+    const nonFeaturedGames = projects.map(project => {
+        if (project.featured) return null
+        const featuredImages = project.gameplayImages.map((image, index) => {
+            if (index > 3) return
+            return <img src={image} alt={`${project.name} gameplay - ${index}`}></img>
+        })
+        return (
+            <Link to={`/store/${project.id}`} className='other-list'>
+                <img src={project.src} alt={project.name} className='slide-main-img'></img>
+                <div className='slide-data'>
+                    <h2>{project.name}</h2>
+                </div>
+            </Link>
+        )
+    })
+
+
+    const dotElements = scrollSnaps.map((el, index) => {
+        return (
+            <DotButton key={index} className={`embla__dot ${index === selectedIndex ? "embla__dot_selected" : ''}`} onClick={() => onDotButtonClick(index)}></DotButton>
+        )
+
+    })
+
     return (
         <main className='store'>
             <section className='featured'>
@@ -61,6 +87,12 @@ export default function Store() {
                     <button className="embla_button embla__prev" onClick={scrollPrev}><MdNavigateNext size="70px" color="white" style={{ transform: "rotate(180deg)" }}/></button>
                     <button className="embla_button embla__next" onClick={scrollNext}><MdNavigateNext size="70px" color="white"/></button>
                 </div>
+                <div class="embla__dots">
+                    {dotElements}
+                </div>
+            </section>
+            <section className='game-list'>
+
             </section>
         </main>
     )

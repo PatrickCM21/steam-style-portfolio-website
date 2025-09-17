@@ -102,3 +102,27 @@ main.store {
     width: 100%;
 }
 
+/* Carousel Buttons */
+
+.embla__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    gap: 3px;
+    cursor: pointer;
+}
+
+.embla__dot {
+    all: unset;
+    background-color: #4d657b;
+    border-radius: 2px;
+    width: 16px;
+    height:8px;
+}
+
+.embla__dot_selected {
+    background-color: #7a8b9c;
+}
+
+/* Game List */
