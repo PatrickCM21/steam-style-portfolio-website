@@ -52,13 +52,9 @@ export default function Store() {
 
     const nonFeaturedGames = projects.map(project => {
         if (project.featured) return null
-        const featuredImages = project.gameplayImages.map((image, index) => {
-            if (index > 3) return
-            return <img src={image} alt={`${project.name} gameplay - ${index}`}></img>
-        })
         return (
-            <Link to={`/store/${project.id}`} className='other-list'>
-                <img src={project.src} alt={project.name} className='slide-main-img'></img>
+            <Link to={`/store/${project.id}`} className='games-list-game'>
+                <img src={project.src} alt={project.name} className='game-main-img'></img>
                 <div className='slide-data'>
                     <h2>{project.name}</h2>
                 </div>
@@ -91,9 +87,12 @@ export default function Store() {
                     {dotElements}
                 </div>
             </section>
-            <section className='game-list'>
-
-            </section>
+            <div className='games-list-background'>
+                <section className='games-list'>
+                    <h4>Other Projects</h4>
+                    {nonFeaturedGames}
+                </section>
+            </div>
         </main>
     )
 }

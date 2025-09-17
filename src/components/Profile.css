@@ -20,6 +20,7 @@ main.profile {
     padding-left: 18px;
     margin: 0;
     width: 50%;
+    padding-right: 6px;
 }
 
 p.name {

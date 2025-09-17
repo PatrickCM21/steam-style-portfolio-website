@@ -4,6 +4,8 @@ main.store {
     padding-top: 12px;
     color: white;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
@@ -126,3 +128,42 @@ main.store {
 }
 
 /* Game List */
+
+.games-list-background {
+    background-image: linear-gradient(to top, #1b2838, #2a475e);
+    top: 0;
+    left: 0;
+    width: 100vw; /* 100% of viewport width */
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.games-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 600px;
+}
+
+.games-list-game {
+    all: unset;
+    display: flex;
+    cursor: pointer;
+    background-color: #2a3d4b;
+    padding: 4px;
+    width: fit-content;
+    border-radius: 4px;
+}
+
+.games-list-game:hover {
+    background-color: #a6cae0;
+    color: #28598a;
+}
+
+.game-main-img {
+    height: 60px;
+}
