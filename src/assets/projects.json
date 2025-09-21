@@ -17,7 +17,7 @@
         "description": "An AI-powered dinner table conversation with whoever you want, alive or dead, real or fictional. You can set the context, discussion, and even reply yourself!",
         "technologies": ["chatgpt api", "python", "html", "css", "javascript"],
         "gameplayImages": ["/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_1.png", "/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_2.png", "/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_3.png", "/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_4.png"],
-        "featured": true
+        "featured": false
     },
     {
         "id": 2,
@@ -58,7 +58,7 @@
         "technologies": ["python"],
         "gameplayImages": ["/gameplay_images/sushi_cat/sushiCatGameplay_1.png", "/gameplay_images/sushi_cat/sushiCatGameplay_2.png", "/gameplay_images/sushi_cat/sushiCatGameplay_3.png"],
         "link": "",
-        "featured": true
+        "featured": false
     },
     {
     

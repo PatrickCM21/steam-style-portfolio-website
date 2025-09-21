@@ -51,9 +51,11 @@
     position: relative;
     display: flex;
     gap: 12px;
-    overflow: scroll;
+    overflow-x: auto;
     scrollbar-width: none;
 }
+
+
 
 .showcase-image {
     height: 100px;
@@ -78,7 +80,6 @@
 }
 
 .slide-btn-left {
-    visibility: hidden;
     transform: rotate(180deg);
 }
 
@@ -154,3 +155,6 @@ h2.showcase-tooltip-header {
     
 }
 
+.invisible {
+    visibility: hidden;
+}

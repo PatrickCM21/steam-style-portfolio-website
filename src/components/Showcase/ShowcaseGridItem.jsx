@@ -1,10 +1,9 @@
 export default function ShowcaseGridItem({job}) {
-    console.log(job)
     const {role, place, type, src, description, time} = job;
 
     const descriptionPoints = Array.isArray(description) 
-        ? description.map(point => <li>{point}</li>) 
-        : <li>{description}</li>
+        ? description.map((point, index) => <li key={index}>{point}</li>) 
+        : <li key={1}>{description}</li>
     return (
         <div className="showcase-item-tooltip" key={role}>
             <img className='showcase-item-icon' src={src} name={role} alt={`${role} ${place} icon`}/>

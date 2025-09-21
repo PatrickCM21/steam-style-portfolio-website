@@ -98,7 +98,7 @@ export default function Profile() {
                         </div>
                     </section>
                     <section className="level">
-                        <div className='level-lbl'>Level <button onClick={increaseLevel}><span class="dot">{level}</span></button></div>
+                        <div className='level-lbl'>Level <button onClick={increaseLevel}><span className="dot">{level}</span></button></div>
                         <div id='badge'>
                             <img src='UNSW.png' alt='UNSW Logo'></img>
                             <p>
