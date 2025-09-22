@@ -225,4 +225,5 @@ main.game {
 
     .game-display-images,
     .game-display-data { flex: 1 1 100%; width: 100%; padding-inline: 24px;}
+    .game-name {padding-inline: 24px;}
 }

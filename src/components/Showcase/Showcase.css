@@ -47,18 +47,26 @@
 .showcase-slide {
     position: relative;
 }
+
 .showcase-image-slide {
     position: relative;
     display: flex;
     gap: 12px;
     overflow-x: auto;
     scrollbar-width: none;
+
 }
 
+
+.showcase-image-slide > * {
+    flex: 0 0 auto;
+
+}
 
 
 .showcase-image {
     height: 100px;
+    width: auto;
     display: block;
 }
 

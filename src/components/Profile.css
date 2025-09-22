@@ -1,27 +1,27 @@
 main.profile {
     background-color: #20212d;
-    width: 950px;
+    max-width: 950px;
     margin: 0 auto;
     margin-bottom: 50px;
 }
 
 #profile-block {
     display: flex;
-    flex-direction: column;
-
+    gap: 16px;
+    margin-inline: 12px;
 }
 
 .profile-header {
     display: flex;
     color: white;
+    width: 100%;
+    gap: 18px;
     margin-top: 18px;
+    flex-wrap: wrap;
 }
 
 .name-description {
-    padding-left: 18px;
-    margin: 0;
-    width: 50%;
-    padding-right: 6px;
+    flex: 1 1 auto;
 }
 
 p.name {
@@ -43,10 +43,15 @@ p.name > img {
     padding-right: 5px;
 }
 
-.profile-header > img {
-    width: 20%;
+.profile-pic {
+    flex: 1 1 auto;
+    max-width: 180px;
+}
+
+.profile-pic > img {
+    height: 100%;
     border: 3px solid var(--border-blue);
-    margin-left: 12px;
+
 }
 
 .dot {
@@ -64,11 +69,10 @@ p.name > img {
 }
 
 .level {
-    width: 30%;
+    flex: 3 1 auto;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-right: 10px;
     
 }
 
@@ -88,11 +92,12 @@ p.name > img {
     background-color:rgba(0, 0, 0, 0.2);
     border-radius: 5%;
     padding-left: 12px;
+    padding-block: 8px;
     gap: 12px;
 }
 #badge > img {
-    width: 30px;
-    height: 30px;
+    width: 48px;
+    height: 48px;
 }
 
 .xp {
@@ -115,6 +120,8 @@ p.name > img {
 
 .content-block {
     display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: flex-end;
     gap: 16px;
     margin: 20px 10px;
 }
@@ -122,7 +129,7 @@ p.name > img {
 /* Showcases */
 
 .showcases {
-    width: 70%;
+    flex: 1 1 600px;
 }
 
 .showcase-entry {
@@ -132,13 +139,13 @@ p.name > img {
 /* Side-info bar */
 
 .side-info-bar {
-    width: 30%;
     background-color:rgba(0, 0, 0, 0.2);
     border-radius: 2px;
     display: flex;
     flex-direction: column;
     padding: 6px;
     height: fit-content;
+    flex: 1 1 30%;
 }
 
 .side-info-bar .work-status {

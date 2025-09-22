@@ -88,7 +88,9 @@ export default function Profile() {
             <section id='profile-block'>
                 {level == 69 && confettiAdapted}
                 <section className="profile-header">
-                    <img src='CodingCockatoo.jpg' alt='profile icon'></img>
+                    <div className='profile-pic'>
+                        <img src='CodingCockatoo.jpg' alt='profile icon'></img>
+                    </div>
                     <section className="name-description">
                         <h2>Coding Cockatoo</h2>
                         <p className='name'>Patrick Crown-Milliss <img src="au.gif" alt='aus flag' ></img> Sydney, Australia </p>
@@ -101,10 +103,10 @@ export default function Profile() {
                         <div className='level-lbl'>Level <button onClick={increaseLevel}><span className="dot">{level}</span></button></div>
                         <div id='badge'>
                             <img src='UNSW.png' alt='UNSW Logo'></img>
-                            <p>
+                            <div>
                                 Computer Science
-                                <p className='xp'>2027 Grad</p>
-                            </p>
+                                <div className='xp'>2027 Grad</div>
+                            </div>
                             
                         </div>
                     </section>
