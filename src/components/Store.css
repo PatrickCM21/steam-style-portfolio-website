@@ -78,6 +78,7 @@ main.store {
 
 .slide-main-img {
     box-shadow: 5px 0 10px -5px rgba(0, 0, 0, 0.5); 
+    width: fit-content;
 }
 
 .slide-data {
@@ -134,7 +135,6 @@ main.store {
     left: 0;
     width: 100vw; /* 100% of viewport width */
     margin-top: 20px;
-    padding-inline: 24px;
 }
 
 .games-list {
@@ -150,10 +150,12 @@ main.store {
     flex-grow:  1;
     flex-shrink: 1;
     display: flex;
+    flex-wrap: wrap;
     cursor: pointer;
     background-color: #2a3d4b;
     padding: 4px;
     border-radius: 4px;
+
 }
 
 .games-list-game:hover {
