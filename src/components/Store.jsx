@@ -15,6 +15,10 @@ export default function Store() {
         )
     );
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [autoplay.current])
+    const [windowSize, setWindowSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight
+    })
 
     const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi)
 
@@ -30,6 +34,20 @@ export default function Store() {
         autoplay.current.reset();  
     }, [emblaApi])
 
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight
+            })
+        }
+
+        window.addEventListener('resize', handleResize)
+
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
+    const mobileMode = windowSize.width < 800 ? true : false
 
     const gameElements = projects.map(project => {
         if (!project.featured) return null
@@ -46,6 +64,15 @@ export default function Store() {
                         {featuredImages}
                     </div>
                 </div>
+            </Link>
+        )
+    })
+
+    const mobileGameElements = projects.map(project => {
+        if (!project.featured) return null
+        return (
+            <Link to={`/store/${project.id}`} className='embla__slide'>
+                <img src={project.src} alt={project.name} className='slide-main-img'></img>
             </Link>
         )
     })
@@ -74,16 +101,18 @@ export default function Store() {
         <main className='store'>
             <section className='featured'>
                 <h3>Featured & Recommended</h3>
-                <div className="embla" >
+                <div id='embla-desktop' className="embla" >
                     <div className="embla__viewport" ref={emblaRef}>
                         <div className='embla__container'>
-                            {gameElements}
+                            {mobileMode ? mobileGameElements : gameElements}
                         </div>  
                     </div>
-                    <button className="embla_button embla__prev" onClick={scrollPrev}><MdNavigateNext size="70px" color="white" style={{ transform: "rotate(180deg)" }}/></button>
-                    <button className="embla_button embla__next" onClick={scrollNext}><MdNavigateNext size="70px" color="white"/></button>
+                    {!mobileMode && <>
+                    <button className="embla_button embla__prev" onClick={scrollPrev} key="btn-1"><MdNavigateNext size="70px" color="white" style={{ transform: "rotate(180deg)" }}/></button>
+                    <button className="embla_button embla__next" onClick={scrollNext} key="btn-2"><MdNavigateNext size="70px" color="white"/></button>
+                    </>}
                 </div>
-                <div class="embla__dots">
+                <div className="embla__dots">
                     {dotElements}
                 </div>
             </section>

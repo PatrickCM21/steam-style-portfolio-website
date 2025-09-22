@@ -34,45 +34,45 @@ export default function Header() {
                 <Link to='store'>
                     <img src="/logo.svg" alt="logo" id='maets-logo'></img>
                 </Link>
-                    <nav>
-                        <ul>
-                            <li className="dropdown">
-                                <NavLink 
-                                    to="store"
-                                    className={({isActive}) => isActive ? "selected" : null}
-                                >
-                                    <span>STORE</span> <hr></hr>
-                                    
-                                </NavLink>
-                                <div className="dropdown-content">
-                                    <Link to="store">Home</Link>
-                                    <Link to="store/wishlist">Wishlist</Link>
-                                </div>
-                            </li>
-                            <li className="dropdown">
-                                <NavLink 
-                                    to="community"
-                                    className={({isActive}) => isActive ? "selected" : null}
-                                >
-                                <span>COMMUNITY</span> <hr></hr>
+                <nav>
+                    <ul>
+                        <li className="dropdown">
+                            <NavLink 
+                                to="store"
+                                className={({isActive}) => isActive ? "selected" : null}
+                            >
+                                <span>STORE</span> <hr></hr>
                                 
-                                </NavLink>
-                                <div className="dropdown-content">
-                                    <Link to="community">Videos</Link>
-                                </div>
-                            </li>
+                            </NavLink>
+                            <div className="dropdown-content">
+                                <Link to="store">Home</Link>
+                                <Link to="store/wishlist">Wishlist</Link>
+                            </div>
+                        </li>
+                        <li className="dropdown">
+                            <NavLink 
+                                to="community"
+                                className={({isActive}) => isActive ? "selected" : null}
+                            >
+                            <span>COMMUNITY</span> <hr></hr>
                             
-                            <li className="dropdown" >
-                                <NavLink 
-                                    to="profile"
-                                    className={({isActive}) => isActive ? "selected" : null}
-                                >
-                                <span>PROFILE</span> <hr></hr>
-                                </NavLink>
-                            </li>
-                            
-                        </ul>
-                    </nav>
+                            </NavLink>
+                            <div className="dropdown-content">
+                                <Link to="community">Videos</Link>
+                            </div>
+                        </li>
+                        
+                        <li className="dropdown" >
+                            <NavLink 
+                                to="profile"
+                                className={({isActive}) => isActive ? "selected" : null}
+                            >
+                            <span>PROFILE</span> <hr></hr>
+                            </NavLink>
+                        </li>
+                        
+                    </ul>
+                </nav>
                 <Link to="profile">
                     <img src="/CodingCockatoo.jpg" id='profile' alt='profile picture'></img>
                 </Link>

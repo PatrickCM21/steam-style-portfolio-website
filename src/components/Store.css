@@ -1,5 +1,4 @@
 main.store {
-    width: 950px;
     margin: 0 auto;
     padding-top: 12px;
     color: white;
@@ -135,27 +134,25 @@ main.store {
     left: 0;
     width: 100vw; /* 100% of viewport width */
     margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    padding-inline: 24px;
 }
 
 .games-list {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 8px;
+    padding-inline: 20vw;
 
-    width: 750px;
 }
 
 .games-list-game {
     all: unset;
+    flex-grow:  1;
+    flex-shrink: 1;
     display: flex;
     cursor: pointer;
     background-color: #2a3d4b;
     padding: 4px;
-    width: fit-content;
     border-radius: 4px;
 }
 
@@ -166,4 +163,15 @@ main.store {
 
 .game-main-img {
     height: 80px;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .embla {
+        width: 320px;
+    }
+    .embla__container {
+        height: 180px;
+    }
+
 }
