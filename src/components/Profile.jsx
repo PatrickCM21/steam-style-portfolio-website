@@ -36,7 +36,7 @@ export default function Profile() {
     useLayoutEffect(() => {
         tooltips.current.filter(Boolean).forEach((itemRef) => {
             const rect = itemRef.getBoundingClientRect()
-            if (rect.right > width) {
+            if (rect.right > screen.width) {
                 itemRef.dataset.flip = "right"
             } else if (rect.left < 0) {
                 itemRef.dataset.flip = "left"

@@ -3,6 +3,7 @@ main.profile {
     max-width: 950px;
     margin: 0 auto;
     margin-bottom: 50px;
+
 }
 
 #profile-block {
@@ -185,7 +186,7 @@ p.name > img {
     border: 1px solid var(--border-blue);
     color: white;
     font-size: 16px;
-    position: absolute;
+    position: fixed;
     border-radius: 2px;
     z-index: 1;
 
