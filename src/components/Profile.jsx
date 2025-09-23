@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useLayoutEffect } from 'react'
 import Confetti from 'react-confetti'
 import { useWindowSize } from 'react-use'
 import { Link } from 'react-router'
@@ -22,16 +22,37 @@ import './Showcase/Showcase.css'
 
 export default function Profile() {
     const [level, setLevel] = useState(42)
+    const tooltips = useRef([])
+    const tooltipsLen = useRef(0)
+    const { width, height } = useWindowSize()
+
+    tooltips.current = [];
+    tooltipsLen.current = 0;
+
     function increaseLevel() {
         setLevel(prevLevel => prevLevel + 1);
     }
 
+    useLayoutEffect(() => {
+        tooltips.current.filter(Boolean).forEach((itemRef) => {
+            const rect = itemRef.getBoundingClientRect()
+            if (rect.right > width) {
+                itemRef.dataset.flip = "right"
+            } else if (rect.left < 0) {
+                itemRef.dataset.flip = "left"
+            }  else {
+                delete itemRef.dataset.flip;
+            }
+        })
+    }, [width])
+
     const badgeElements = badges.map(badge => {
+        
         return (
             <div className='tooltip' key={badge.name}>
                 <img className='badge-icon' src={badge.src} key={badge.name} name={badge.name} alt={`${badge.name} logo`}> 
                 </img>
-                <p className='tooltip-text'>{badge.name}</p>    
+                <p className='tooltip-text' ref={(el)=> (tooltips.current[tooltipsLen.current++] = el)}>{badge.name}</p>    
             </div>
         )
     })
@@ -54,7 +75,7 @@ export default function Profile() {
         return (
             <div className='tooltip' key={skill.name}>
                 <img className='badge-icon' src={skill.src} key={skill.name} name={skill.name} alt={`${skill.name} icon`}></img>
-                <p className='tooltip-text'>{skill.name}</p>    
+                <p className='tooltip-text' ref={(el)=> tooltips.current[tooltipsLen.current++] = el}>{skill.name}</p>    
             </div>
         )
     })
@@ -63,7 +84,7 @@ export default function Profile() {
         return (
             <div className='tooltip' key={achievement.name}>
                 <img className='achievement-icon' src={achievement.src} key={achievement.name} name={achievement.name} alt={`${achievement.name} icon`}></img>
-                <p className='tooltip-text' style={{fontSize: "12px"}}>{achievement.name}</p>    
+                <p className='tooltip-text' style={{fontSize: "12px"}} ref={(el)=> tooltips.current[tooltipsLen.current++] = el}>{achievement.name}</p>    
             </div>
         )
     })
@@ -80,7 +101,6 @@ export default function Profile() {
         )
     })
     
-    const { width, height } = useWindowSize()
     const confettiAdapted = <Confetti width={width} height={height}/>
     
     return (

@@ -54,8 +54,10 @@
     gap: 12px;
     overflow-x: auto;
     scrollbar-width: none;
+    max-width: 100%;
 
 }
+
 
 
 .showcase-image-slide > * {
@@ -161,6 +163,18 @@ h2.showcase-tooltip-header {
 .showcase-tooltip-data > ul > li {
     margin-bottom: 2px;
     
+}
+
+.showcase-tooltip-data[data-flip="right"] {
+    left: auto;
+    right: 5%;
+    transform: none;
+}
+
+.showcase-tooltip-data[data-flip="left"] {
+    left: 5%;
+    right: auto;
+    transform: none;
 }
 
 .invisible {

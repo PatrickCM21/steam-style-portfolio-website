@@ -49,7 +49,6 @@ p.name > img {
 }
 
 .profile-pic > img {
-    height: 100%;
     border: 3px solid var(--border-blue);
 
 }
@@ -129,7 +128,8 @@ p.name > img {
 /* Showcases */
 
 .showcases {
-    flex: 1 1 600px;
+    flex: 1 1 auto;
+    max-width: 600px;
 }
 
 .showcase-entry {
@@ -191,7 +191,18 @@ p.name > img {
 
     margin: 0;
     padding: 3px;
+}
 
+.tooltip-text[data-flip="right"] {
+    left: auto;
+    right: 0;
+    transform: none;
+}
+
+.tooltip-text[data-flip="left"] {
+    left: 0;
+    right: auto;
+    transform: none;
 }
 
 
