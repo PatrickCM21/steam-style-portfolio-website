@@ -155,11 +155,9 @@ export default function Profile() {
                     <Showcase>
                         <ShowcaseHeader>Educational History</ShowcaseHeader>
                         <ShowcaseContent>
-                            <ShowcaseContent>
-                                <ShowcaseGrid>
-                                    {educationElements}
-                                </ShowcaseGrid>
-                        </ShowcaseContent>
+                            <ShowcaseGrid>
+                                {educationElements}
+                            </ShowcaseGrid>
                         </ShowcaseContent>
                     </Showcase>
                     <Showcase>
