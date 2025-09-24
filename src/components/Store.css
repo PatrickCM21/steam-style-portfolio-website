@@ -8,8 +8,13 @@ main.store {
     justify-content: center;
 }
 
+.featured {
+    margin-inline: 10vw;
+
+}
+
 .embla {
-    width: 750px;
+    max-width: 1050px;
     position: relative;
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.5);
 }
@@ -62,7 +67,7 @@ main.store {
 
 .embla__container {
     display: flex;
-    height: 220px;
+    height: 320px;
 
 }
 
@@ -170,11 +175,23 @@ main.store {
     height: 80px;
 }
 
+@media only screen and (max-width: 1000px) {
+
+    .embla {
+        width: 565px;
+    }
+
+
+}
+
+
 @media only screen and (max-width: 800px) {
 
     .embla {
         width: 320px;
     }
+
+
     .embla__container {
         height: 180px;
     }

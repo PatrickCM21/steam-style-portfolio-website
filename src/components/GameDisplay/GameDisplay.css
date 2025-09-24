@@ -20,7 +20,7 @@ main.game {
 }
 
 .game-display {
-    max-width: 800px;
+    max-width: 1050px;
     margin-inline: 5vw;
     display: flex;
     justify-content: center;
@@ -44,11 +44,10 @@ main.game {
     display: flex;
     flex-direction: column;
     flex: 2 1 0;
-    
+    gap: 2px;
 }
 
 .game-display-images > img {
-    width: 100%;
     height: 300px;
     object-fit: contain;
 
@@ -58,15 +57,29 @@ main.game {
 .game-display-image-slider {
     display: flex;
     align-items: center;
-    gap: 1px;
+    gap: 4px;
     width: 100%;
     overflow-x: scroll;
     min-height: 75px;
     overflow-y: hidden;
+    padding-inline: 2px;
 }
 
+.game-display-image-slider > button {
+    all: unset;
+    cursor: pointer;
+    flex: 0 0 24%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .game-display-image-slider > button > img {
-    border: 2px solid rgba(0.2, 0.2, 0.2, 0)
+    border: 2px solid rgba(0.2, 0.2, 0.2, 0);
+    max-height: 96px;
+
 
 }
 
@@ -74,7 +87,7 @@ main.game {
     width: 100%;
     height: 16px;
     display: flex;
-    margin-top: -15px;
+    margin-top: -17px;
 }
 
 .scroll {
@@ -109,16 +122,7 @@ main.game {
 }
 
 
-.game-display-image-slider > button {
-    all: unset;
-    cursor: pointer;
-}
 
-.game-display-image-slider > button > img {
-
-    width: 100px;
-    object-fit: contain;
-}
 
 .img-selected {
     border: 2px solid var(--border-blue) !important;

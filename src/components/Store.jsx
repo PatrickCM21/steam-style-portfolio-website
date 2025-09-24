@@ -101,7 +101,7 @@ export default function Store() {
         <main className='store'>
             <section className='featured'>
                 <h3>Featured & Recommended</h3>
-                <div id='embla-desktop' className="embla" >
+                <div id='embla' className="embla" >
                     <div className="embla__viewport" ref={emblaRef}>
                         <div className='embla__container'>
                             {mobileMode ? mobileGameElements : gameElements}
