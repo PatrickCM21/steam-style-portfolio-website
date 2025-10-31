@@ -1,5 +1,16 @@
 [
     {
+        "role": "Software Engineer",
+        "place": "UNSW",
+        "type": "Employment",
+        "src": "/UNSW.jpeg",
+        "description": [
+            "Developing a Generative AI-powered experience with Day of AI Australia.",
+            "Responsible for designing, developing, and testing an educational game for schools."
+        ],
+        "time": "Aug 2025 - Present"
+    },
+    {
         "role": "Clubs and Grants Officer",
         "place": "Arc @ UNSW",
         "type": "Employment",

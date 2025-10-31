@@ -172,7 +172,7 @@ export default function Profile() {
                     </Showcase>
                 </section>
                 <div className='side-info-bar'>
-                    <label className='work-status'>Currently Looking For Work</label>
+                    <label className='work-status'>Currently Enjoying Life</label>
                     <div className='badges'>
                         <h4 className='side-info-bar-title'>Technologies <span className='side-info-bar-num'>{badges.length}</span></h4>
                         <div className='badge-list'>

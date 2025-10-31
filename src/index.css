@@ -1,6 +1,7 @@
 :root {
     --custom-grey: rgb(215, 215, 215);
     --border-blue: rgb(70, 199, 208);
+    overflow-x: hidden;
 }
 
 html, body {
