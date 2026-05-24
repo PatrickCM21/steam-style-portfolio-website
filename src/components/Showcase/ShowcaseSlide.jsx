@@ -39,14 +39,14 @@ export default function ShowcaseSlide({ children }) {
     return (
         <div className='showcase-slide'> 
             <button 
-                className={`slide-btn slide-btn-left ${side === 'left' && !noButton ? "invisible" : ""}` }
+                className={`slide-btn slide-btn-left ${noButton || side === 'left' ? "invisible" : ""}` }
                 onClick={() => scrollProjects("left")} ref={leftBtn}>
                     <MdNavigateNext color="white"/></button>
             <div className='showcase-image-slide' ref={scrollBar}>                                  
                 {children}
             </div>
             <button 
-                className={`slide-btn slide-btn-right ${side === 'right'  && !noButton ? "invisible" : ""}` }
+                className={`slide-btn slide-btn-right ${noButton || side === 'right' ? "invisible" : ""}` }
                 onClick={() => scrollProjects("right")} ref={rightBtn}>
                     <MdNavigateNext color="white"/></button>
         </div>

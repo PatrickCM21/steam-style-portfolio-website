@@ -1,14 +1,14 @@
 [
     {
         "role": "Software Engineer",
-        "place": "UNSW",
+        "place": "Day of AI",
         "type": "Employment",
-        "src": "/UNSW.jpeg",
+        "src": "/achievement_icons/dayofai.png",
         "description": [
             "Developing a Generative AI-powered experience with Day of AI Australia.",
             "Responsible for designing, developing, and testing an educational game for schools."
         ],
-        "time": "Aug 2025 - Present"
+        "time": "Aug 2025 - Jan 2026"
     },
     {
         "role": "Clubs and Grants Officer",

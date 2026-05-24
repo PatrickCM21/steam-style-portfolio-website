@@ -27,7 +27,7 @@
         "description": "Inspired by the classic 'Cookie Clicker', this reimagines world domination by the cookie eaters, cockatoo's. Leverage the power of Kookabura's and luxury cages to exponentially grow the cockatoo population.",
         "technologies": ["html", "css", "javascript"],
         "gameplayImages": ["/gameplay_images/cockatoo_clicker/cockatooClickerGameplay_1.png", "/gameplay_images/cockatoo_clicker/cockatooClickerGameplay_2.png", "/gameplay_images/cockatoo_clicker/cockatooClickerGameplay_3.png"],
-        "featured": true
+        "featured": false
     },
     {
         "id": 3,
@@ -37,7 +37,7 @@
         "description": "Send and receive a mystery note from a random stranger!",
         "technologies": ["sqlite", "html", "css", "javascript", "python"],
         "gameplayImages":  ["/gameplay_images/ghost_notes/ghostNotesGameplay_1.png", "/gameplay_images/ghost_notes/ghostNotesGameplay_2.png", "/gameplay_images/ghost_notes/ghostNotesGameplay_3.png"],
-        "featured": true
+        "featured": false
     },
     {
         "id": 4,
@@ -47,7 +47,7 @@
         "description": "Have an overflowing Steam library but still don't know what to play? Use this hidden gem finder to find the top rated games you still haven't given a chance!",
         "technologies": ["html", "css", "javascript", "python"],
         "gameplayImages": ["/gameplay_images/gem_finder/gemFinderGameplay_1.png", "/gameplay_images/gem_finder/gemFinderGameplay_2.png", "/gameplay_images/gem_finder/gemFinderGameplay_3.png"],
-        "featured": true
+        "featured": false
     }
     ,
     {
@@ -70,6 +70,22 @@
         "gameplayImages": ["/gameplay_images/gudetamas_escape/gudetamaGameplay_2.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_3.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_4.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_5.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_6.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_7.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_8.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_9.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_10.png"],
         "link": "",
         "featured": false
+    },
+    {
+        "id": 8,
+        "name": "LongLingo",
+        "src": "/projects_icons/longlingo.png",
+        "link": "https://apps.apple.com/om/app/longlingo-learn-chinese/id6761418443",
+        "description": "LongLingo is a focused, spaced-repetition Chinese flashcard application designed to help users efficiently learn Mandarin Chinese vocabulary. Utilizing the science-backed FSRS (Free Spaced Repetition Scheduler) algorithm, it provides HSK-aligned progress tracking, Simplified/Traditional character toggles, Pinyin helpers, and integrated audio pronunciation without the need for manual deck creation.",
+        "technologies": ["react native", "javascript", "react"],
+        "gameplayImages": [
+            "/gameplay_images/longlingo/screenshot_1.png",
+            "/gameplay_images/longlingo/screenshot_2.png",
+            "/gameplay_images/longlingo/screenshot_3.png",
+            "/gameplay_images/longlingo/screenshot_4.png",
+            "/gameplay_images/longlingo/screenshot_5.png",
+            "/gameplay_images/longlingo/screenshot_6.png"
+        ],
+        "featured": true
     }
-
 ]

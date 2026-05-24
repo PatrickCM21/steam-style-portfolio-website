@@ -43,5 +43,10 @@
         "name": "SQLite",
         "src": "/badge_icons/SQLite.png",
         "description": "Used in my 'Ghost Notes' project to store and retreive user notes."
+    },
+    {
+        "name": "React Native",
+        "src": "/badge_icons/React.svg",
+        "description": "Used to develop the cross-platform LongLingo app."
     }
 ]

@@ -8,5 +8,10 @@
         "type": "Email",
         "src": "/social_icons/email.png",
         "link": "mailto:patrickcrownmilliss@gmail.com"
+    },
+    {
+        "type": "GitHub",
+        "src": "/social_icons/github.png",
+        "link": "https://github.com/PatrickCM21"
     }
 ]

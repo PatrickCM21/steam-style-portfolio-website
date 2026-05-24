@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useLayoutEffect } from 'react'
 import Confetti from 'react-confetti'
 import { useWindowSize } from 'react-use'
 import { Link } from 'react-router'
+import { useCookies } from 'react-cookie'
 
 import badges from '../assets/badges.json'
 import featureProjects from '../assets/projects.json'
@@ -22,6 +23,8 @@ import './Showcase/Showcase.css'
 
 export default function Profile() {
     const [level, setLevel] = useState(42)
+    const [cookies] = useCookies(['gameStars'])
+    const starsByGame = cookies.gameStars ?? {}
     const tooltips = useRef([])
     const tooltipsLen = useRef(0)
     const { width, height } = useWindowSize()
@@ -40,110 +43,165 @@ export default function Profile() {
                 itemRef.dataset.flip = "right"
             } else if (rect.left < 0) {
                 itemRef.dataset.flip = "left"
-            }  else {
+            } else {
                 delete itemRef.dataset.flip;
             }
         })
     }, [width])
 
+    // Get level background class based on number (Steam style)
+    function getLevelClass(lvl) {
+        if (lvl < 10) return 'lvl-0'
+        if (lvl < 20) return 'lvl-10'
+        if (lvl < 30) return 'lvl-20'
+        if (lvl < 40) return 'lvl-30'
+        if (lvl < 50) return 'lvl-40' // Level 42 starts here (green)
+        if (lvl < 60) return 'lvl-50' // Blue
+        if (lvl < 70) return 'lvl-60' // Purple
+        return 'lvl-70' // Gold
+    }
+
     const badgeElements = badges.map(badge => {
-        
         return (
-            <div className='tooltip' key={badge.name}>
-                <img className='badge-icon' src={badge.src} key={badge.name} name={badge.name} alt={`${badge.name} logo`}> 
-                </img>
-                <p className='tooltip-text' ref={(el)=> (tooltips.current[tooltipsLen.current++] = el)}>{badge.name}</p>    
+            <div className='tooltip profile-badge-item' key={badge.name}>
+                <img className='badge-icon' src={badge.src} name={badge.name} alt={`${badge.name} logo`} />
+                <div className='tooltip-text' ref={(el) => (tooltips.current[tooltipsLen.current++] = el)}>
+                    <strong>{badge.name}</strong>
+                    <p style={{ margin: '4px 0 0 0', fontSize: '11px', fontWeight: 'normal' }}>{badge.description}</p>
+                </div>
             </div>
         )
     })
+
     const featuredProjectElements = featureProjects.filter(proj => proj.featured === true)
-    .map(project => {
-        return <div key={project.id}>
-            <Link to={`/store/${project.id}`} >
-                <img className='showcase-image' src={project.src}></img>
-            </Link>
-        </div>
-    })
+        .map(project => {
+            const rating = starsByGame[project.id];
+            return (
+                <div key={project.id} className="profile-featured-game-card">
+                    <Link to={`/store/${project.id}`} >
+                        <img className='showcase-image' src={project.src} alt={project.name}></img>
+                    </Link>
+                    <div className="game-card-hover-overlay">
+                        <span>{project.name}</span>
+                        {rating !== undefined && rating !== -1 && (
+                            <span className="user-rating-badge">Rated {rating + 1}/5 ★</span>
+                        )}
+                    </div>
+                </div>
+            )
+        })
 
     const socialsElements = socials.map(social => {
-        return <a href={social.link} key={social.type}>
+        return <a href={social.link} key={social.type} target="_blank" rel="noopener noreferrer" className="social-icon-wrapper">
             <img className="social-img" src={social.src} alt={social.type} ></img>
         </a>
     })
 
-    const skillsElements = skills.map(skill => {
+    // Skills represented like Steam Friends List!
+    const skillsElements = skills.map((skill, index) => {
+        // Distribute mock statuses
+        const statuses = ['Online', 'In-Game', 'Away', 'Online', 'In-Game']
+        const status = statuses[index % statuses.length]
+        const statusClass = status.toLowerCase().replace(' ', '-')
+
         return (
-            <div className='tooltip' key={skill.name}>
-                <img className='badge-icon' src={skill.src} key={skill.name} name={skill.name} alt={`${skill.name} icon`}></img>
-                <p className='tooltip-text' ref={(el)=> tooltips.current[tooltipsLen.current++] = el}>{skill.name}</p>    
+            <div className='profile-friend-row' key={skill.name}>
+                <div className={`friend-avatar-wrapper ${statusClass}`}>
+                    <img className='friend-avatar' src={skill.src} alt={`${skill.name} icon`} />
+                </div>
+                <div className="friend-details">
+                    <span className="friend-name">{skill.name}</span>
+                    <span className={`friend-status ${statusClass}`}>
+                        {status === 'In-Game' ? 'In-Game (Coding)' : status}
+                    </span>
+                </div>
             </div>
         )
     })
 
     const achievementsElements = achievements.map(achievement => {
         return (
-            <div className='tooltip' key={achievement.name}>
-                <img className='achievement-icon' src={achievement.src} key={achievement.name} name={achievement.name} alt={`${achievement.name} icon`}></img>
-                <p className='tooltip-text' style={{fontSize: "12px"}} ref={(el)=> tooltips.current[tooltipsLen.current++] = el}>{achievement.name}</p>    
+            <div className='tooltip achievement-showcase-item' key={achievement.name}>
+                <img className='achievement-icon' src={achievement.src} name={achievement.name} alt={`${achievement.name} icon`}></img>
+                <div className='tooltip-text' style={{ fontSize: "14px", width: "240px" }} ref={(el) => tooltips.current[tooltipsLen.current++] = el}>
+                    <strong style={{ fontSize: '15px' }}>Achievement Unlocked</strong>
+                    <p style={{ margin: '6px 0 0 0', fontSize: '13px', fontWeight: 'normal' }}>{achievement.name}</p>
+                </div>
             </div>
         )
     })
 
     const workElements = work.map(job => {
         return (
-            <ShowcaseGridItem job={job}/>
+            <ShowcaseGridItem job={job} key={job.role} />
         )
     })
 
     const educationElements = education.map(degree => {
         return (
-            <ShowcaseGridItem job={degree}/>
+            <ShowcaseGridItem job={degree} key={degree.role} />
         )
     })
-    
-    const confettiAdapted = <Confetti width={width} height={height}/>
-    
+
+    const confettiAdapted = <Confetti width={width} height={height} />
+    const levelClass = getLevelClass(level)
+
     return (
         <main className='profile'>
+            {level === 69 && confettiAdapted}
+
+            {/* Upper Profile Container (Header Banner overlay) */}
             <section id='profile-block'>
-                {level == 69 && confettiAdapted}
                 <section className="profile-header">
-                    <div className='profile-pic'>
-                        <img src='CodingCockatoo.jpg' alt='profile icon'></img>
+                    <div className={`profile-pic-container ${levelClass}`}>
+                        <img src='/CodingCockatoo.jpg' alt='profile icon' className="profile-main-avatar"></img>
                     </div>
                     <section className="name-description">
-                        <h2>Coding Cockatoo</h2>
-                        <p className='name'>Patrick Crown-Milliss <img src="au.gif" alt='aus flag' ></img> Sydney, Australia </p>
-                        <p>Welcome to my profile! You can contact me anywhere below :)</p>
+                        <h2 className="profile-user-name">Coding Cockatoo</h2>
+                        <p className='name'>
+                            Patrick Crown-Milliss
+                            <img src="/au.gif" alt='aus flag' className="flag-icon" ></img>
+                            <span className="location-text">Sydney, Australia</span>
+                        </p>
+                        <p className="profile-summary"> Hey! I'm an AI-first full-stack developer with a passion for building cool, interactive web experiences, game environments, and everything in between.
+                            <br></br>
+                            Feel free to contact me anywhere below :)</p>
                         <div className='social-links'>
                             {socialsElements}
                         </div>
                     </section>
                     <section className="level">
-                        <div className='level-lbl'>Level <button onClick={increaseLevel}><span className="dot">{level}</span></button></div>
+                        <div className='level-lbl'>
+                            Level
+                            <button onClick={increaseLevel} className="level-btn" title="Click to level up!">
+                                <span className={`dot ${levelClass}`}>{level}</span>
+                            </button>
+                        </div>
                         <div id='badge'>
-                            <img src='UNSW.png' alt='UNSW Logo'></img>
-                            <div>
-                                Computer Science
+                            <img src='/UNSW.png' alt='UNSW Logo'></img>
+                            <div className="badge-info">
+                                <span className="badge-title">Computer Science</span>
                                 <div className='xp'>2027 Grad</div>
                             </div>
-                            
                         </div>
                     </section>
                 </section>
             </section>
+
+            {/* Profile Content Columns */}
             <div className='content-block'>
+                {/* Left Columns (Showcases) */}
                 <section className='showcases'>
                     <Showcase>
                         <ShowcaseHeader>Project Showcase</ShowcaseHeader>
                         <ShowcaseContent>
-                            <ShowcaseContentText>Some highlights from my projects, click them for more details!</ShowcaseContentText>
+                            <ShowcaseContentText>Highlights from my projects, click them for details!</ShowcaseContentText>
                             <ShowcaseSlide>
                                 {featuredProjectElements}
                             </ShowcaseSlide>
-                            
                         </ShowcaseContent>
                     </Showcase>
+
                     <Showcase>
                         <ShowcaseHeader>Work and Volunteering Experience</ShowcaseHeader>
                         <ShowcaseContent>
@@ -152,6 +210,7 @@ export default function Profile() {
                             </ShowcaseGrid>
                         </ShowcaseContent>
                     </Showcase>
+
                     <Showcase>
                         <ShowcaseHeader>Educational History</ShowcaseHeader>
                         <ShowcaseContent>
@@ -160,28 +219,40 @@ export default function Profile() {
                             </ShowcaseGrid>
                         </ShowcaseContent>
                     </Showcase>
+
                     <Showcase>
-                        <ShowcaseHeader>Achievements</ShowcaseHeader>
+                        <ShowcaseHeader>Achievements Showcase</ShowcaseHeader>
                         <ShowcaseContent>
-                            <ShowcaseContent>
-                                <ShowcaseGrid>
+                            <div className="profile-achievements-showcase">
+                                <div className="achievement-unlocked-grid">
                                     {achievementsElements}
-                                </ShowcaseGrid>
-                        </ShowcaseContent>
+                                </div>
+                            </div>
                         </ShowcaseContent>
                     </Showcase>
                 </section>
+
+                {/* Right Column (Side-info bar widgets) */}
                 <div className='side-info-bar'>
-                    <label className='work-status'>Currently Enjoying Life</label>
-                    <div className='badges'>
-                        <h4 className='side-info-bar-title'>Technologies <span className='side-info-bar-num'>{badges.length}</span></h4>
-                        <div className='badge-list'>
+                    <div className="status-widget">
+                        <span className="status-indicator"></span>
+                        <label className='work-status'>Currently Enjoying Life</label>
+                    </div>
+
+                    <div className='badges profile-widget-panel'>
+                        <h4 className='side-info-bar-title'>
+                            Technologies <span className='side-info-bar-num'>{badges.length}</span>
+                        </h4>
+                        <div className='profile-badge-list'>
                             {badgeElements}
                         </div>
                     </div>
-                    <div className='skills'>
-                        <h4 className='side-info-bar-title'>Skills and Interests<span className='side-info-bar-num'>{skills.length}</span></h4>
-                        <div className='badge-list'>
+
+                    <div className='skills profile-widget-panel'>
+                        <h4 className='side-info-bar-title'>
+                            Skills & Interests <span className='side-info-bar-num'>{skills.length}</span>
+                        </h4>
+                        <div className='profile-friends-list'>
                             {skillsElements}
                         </div>
                     </div>

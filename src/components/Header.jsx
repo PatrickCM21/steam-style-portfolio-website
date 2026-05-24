@@ -9,9 +9,26 @@ export default function Header() {
     }
     return (
         <>
+            {/* Top Bar for Desktop */}
+            <div className="header-top-bar">
+                <div className="header-top-bar-content">
+                    <div className="header-top-bar-right">
+                        <a 
+                            href="/Resume_Patrick Crown-Milliss.pdf" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="install-resume-btn"
+                        >
+                            <img src="/logo_small.svg" className="install-icon" alt="install icon" />
+                            Install Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <div className={`sidebar ${navOpen ? 'is-open' : ""}`}>
                 <div id='sidebar-profile'>
-                    <Link to='profile'>
+                    <Link to='profile' onClick={changeSideNav}>
                         <img src="/CodingCockatoo.jpg" alt='profile picture'></img>
                         <p>Coding Cockatoo</p>
                     </Link>
@@ -19,63 +36,85 @@ export default function Header() {
                 <NavLink 
                     to='store'
                     className={({isActive}) => isActive ? "side-selected" : null}
-                >Store</NavLink>
+                    onClick={changeSideNav}
+                    end
+                >STORE</NavLink>
+                <NavLink 
+                    to='store/wishlist'
+                    className={({isActive}) => isActive ? "side-selected" : null}
+                    onClick={changeSideNav}
+                >WISHLIST</NavLink>
                 <NavLink 
                     to='community'
                     className={({isActive}) => isActive ? "side-selected" : null}
-                >Community</NavLink>
-
+                    onClick={changeSideNav}
+                >COMMUNITY</NavLink>
+                <NavLink 
+                    to='profile'
+                    className={({isActive}) => isActive ? "side-selected" : null}
+                    onClick={changeSideNav}
+                >PROFILE</NavLink>
+                <a 
+                    href="/Resume_Patrick Crown-Milliss.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{color: '#a3d200', fontWeight: 'bold'}}
+                >
+                    INSTALL RESUME
+                </a>
             </div>
             { navOpen && <button className='grey-out' onClick={changeSideNav}></button>}
             <header>
-                <button onClick={changeSideNav} className="sidebar-btn" >
-                    <img src='/header_menu_hamburger.png' alt='side bar nav'></img>
-                </button>
-                <Link to='store'>
-                    <img src="/logo.svg" alt="logo" id='maets-logo'></img>
-                </Link>
-                <nav>
-                    <ul>
-                        <li className="dropdown">
-                            <NavLink 
-                                to="store"
-                                className={({isActive}) => isActive ? "selected" : null}
-                            >
-                                <span>STORE</span> <hr></hr>
-                                
-                            </NavLink>
-                            <div className="dropdown-content">
-                                <Link to="store">Home</Link>
-                                <Link to="store/wishlist">Wishlist</Link>
-                            </div>
-                        </li>
-                        <li className="dropdown">
-                            <NavLink 
-                                to="community"
-                                className={({isActive}) => isActive ? "selected" : null}
-                            >
-                            <span>COMMUNITY</span> <hr></hr>
+                <div className="header-nav-container">
+                    <button onClick={changeSideNav} className="sidebar-btn" >
+                        <img src='/header_menu_hamburger.png' alt='side bar nav'></img>
+                    </button>
+                    <Link to='store' className="logo-container">
+                        <img src="/logo.svg" alt="logo" id='maets-logo'></img>
+                    </Link>
+                    <nav>
+                        <ul>
+                            <li className="dropdown">
+                                <NavLink 
+                                    to="store"
+                                    className={({isActive}) => isActive ? "selected" : null}
+                                    end
+                                >
+                                    <span>STORE</span> <hr></hr>
+                                </NavLink>
+                                <div className="dropdown-content">
+                                    <Link to="store">Home</Link>
+                                    <Link to="store/wishlist">Wishlist</Link>
+                                </div>
+                            </li>
+                            <li className="dropdown">
+                                <NavLink 
+                                    to="community"
+                                    className={({isActive}) => isActive ? "selected" : null}
+                                >
+                                    <span>COMMUNITY</span> <hr></hr>
+                                </NavLink>
+                                <div className="dropdown-content">
+                                    <Link to="community">Videos & Guides</Link>
+                                </div>
+                            </li>
                             
-                            </NavLink>
-                            <div className="dropdown-content">
-                                <Link to="community">Videos</Link>
-                            </div>
-                        </li>
-                        
-                        <li className="dropdown" >
-                            <NavLink 
-                                to="profile"
-                                className={({isActive}) => isActive ? "selected" : null}
-                            >
-                            <span>PROFILE</span> <hr></hr>
-                            </NavLink>
-                        </li>
-                        
-                    </ul>
-                </nav>
-                <Link to="profile">
-                    <img src="/CodingCockatoo.jpg" id='profile' alt='profile picture'></img>
-                </Link>
+                            <li className="dropdown" >
+                                <NavLink 
+                                    to="profile"
+                                    className={({isActive}) => isActive ? "selected" : null}
+                                >
+                                    <span>PROFILE</span> <hr></hr>
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div className="header-profile-link">
+                        <Link to="profile">
+                            <img src="/CodingCockatoo.jpg" id='profile' alt='profile picture'></img>
+                        </Link>
+                    </div>
+                </div>
             </header>
         </>
     )

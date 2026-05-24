@@ -1,18 +1,59 @@
 :root {
-    --custom-grey: rgb(215, 215, 215);
-    --border-blue: rgb(70, 199, 208);
-    overflow-x: hidden;
+  --custom-grey: #8f98a0;
+  --border-blue: #2a475e;
+  --steam-blue: #1a9fff;
+  --steam-light-blue: #67c1f5;
+  --steam-bg-dark: #171a21;
+  --steam-bg-body: #1b2838;
+  --steam-bg-panel: #16202d;
+  --steam-bg-darker: #0e141b;
+  --steam-text-primary: #c6d4df;
+  --steam-text-secondary: #8f98a0;
+  --steam-green: #a3d200;
+  --steam-green-hover: #8eb700;
+  
+  overflow-x: hidden;
 }
 
 html, body {
   margin: 0;
   padding: 0;
-
-  background-color: #1b2838;
-  font-family:"Roboto", Arial, sans-serif;
+  background-color: var(--steam-bg-body);
+  background-image: radial-gradient(circle at top, #1b2838 0%, #171a21 100%);
+  background-attachment: fixed;
+  font-family: "Motiva Sans", "Roboto", Arial, sans-serif;
+  color: var(--steam-text-primary);
+  min-height: 100vh;
 }
+
 #root {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
+/* Custom Scrollbar styled like Steam */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #171a21;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d4450;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4e5766;
+}
+
+/* Global button styles */
+button {
+  font-family: inherit;
 }
