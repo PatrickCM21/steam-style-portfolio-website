@@ -14,10 +14,9 @@ export default function Header() {
                 <div className="header-top-bar-content">
                     <div className="header-top-bar-right">
                         <a 
-                            href="/Resume_Patrick Crown-Milliss.pdf" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
+                            href="/Resume_Patrick_Crown-Milliss.pdf" 
                             className="install-resume-btn"
+                            onClick={(e) => e.stopPropagation()}
                         >
                             <img src="/logo_small.svg" className="install-icon" alt="install icon" />
                             Install Resume
@@ -55,10 +54,9 @@ export default function Header() {
                     onClick={changeSideNav}
                 >PROFILE</NavLink>
                 <a 
-                    href="/Resume_Patrick Crown-Milliss.pdf" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                    href="/Resume_Patrick_Crown-Milliss.pdf" 
                     style={{color: '#a3d200', fontWeight: 'bold'}}
+                    onClick={(e) => e.stopPropagation()}
                 >
                     INSTALL RESUME
                 </a>

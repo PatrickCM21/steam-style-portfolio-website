@@ -13,13 +13,13 @@ export default function ShowcaseGridItem({job}) {
         const item = tooltipData.current;
         const rect = item.getBoundingClientRect()
         const BUFFER = 2
-        if (rect.right > screen.width - BUFFER) {
+        if (rect.right > window.innerWidth - BUFFER) {
             item.dataset.flip = "right"
         } else if (rect.left < BUFFER) {
             item.dataset.flip = "left"
         } else {
             const parentsRect = tooltipParent.current.getBoundingClientRect()
-            if (parentsRect.right < screen.width / 2 || parentsRect.left <= rect.left) {
+            if (parentsRect.right < window.innerWidth / 2 || parentsRect.left <= rect.left) {
                 delete item.dataset.flip;
             }
         }

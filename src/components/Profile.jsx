@@ -39,7 +39,7 @@ export default function Profile() {
     useLayoutEffect(() => {
         tooltips.current.filter(Boolean).forEach((itemRef) => {
             const rect = itemRef.getBoundingClientRect()
-            if (rect.right > screen.width) {
+            if (rect.right > window.innerWidth) {
                 itemRef.dataset.flip = "right"
             } else if (rect.left < 0) {
                 itemRef.dataset.flip = "left"
@@ -123,7 +123,7 @@ export default function Profile() {
         return (
             <div className='tooltip achievement-showcase-item' key={achievement.name}>
                 <img className='achievement-icon' src={achievement.src} name={achievement.name} alt={`${achievement.name} icon`}></img>
-                <div className='tooltip-text' style={{ fontSize: "14px", width: "240px" }} ref={(el) => tooltips.current[tooltipsLen.current++] = el}>
+                <div className='tooltip-text' style={{ fontSize: "14px", maxWidth: "240px", width: "auto" }} ref={(el) => tooltips.current[tooltipsLen.current++] = el}>
                     <strong style={{ fontSize: '15px' }}>Achievement Unlocked</strong>
                     <p style={{ margin: '6px 0 0 0', fontSize: '13px', fontWeight: 'normal' }}>{achievement.name}</p>
                 </div>
@@ -195,7 +195,9 @@ export default function Profile() {
                     <Showcase>
                         <ShowcaseHeader>Project Showcase</ShowcaseHeader>
                         <ShowcaseContent>
-                            <ShowcaseContentText>Highlights from my projects, click them for details!</ShowcaseContentText>
+                            <ShowcaseContentText>
+                                {width < 800 ? "Highlights from my projects, tap them for details!" : "Highlights from my projects, click them for details!"}
+                            </ShowcaseContentText>
                             <ShowcaseSlide>
                                 {featuredProjectElements}
                             </ShowcaseSlide>

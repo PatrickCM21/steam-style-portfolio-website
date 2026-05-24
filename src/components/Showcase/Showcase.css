@@ -1,6 +1,7 @@
 /* For Showcase and dependant children */
 
 .showcase-header {
+    box-sizing: border-box;
     width: 100%;
     height: 30px;
     border-top-left-radius: 5px;
@@ -25,6 +26,7 @@
 }
 
 .showcase-content {
+    box-sizing: border-box;
     background-image: linear-gradient(to right, #172629, #1c171f);
     margin: 0;
     padding-block: 10px;
@@ -37,6 +39,7 @@
 }
 
 .showcase-content-text {
+    box-sizing: border-box;
     padding: 8px;
     background-color: #10181b;
     font-size: 16px;
@@ -110,6 +113,7 @@
 }
 
 .showcase-item-icon {
+    box-sizing: border-box;
     width: 100px;
     height: 100px;
     object-fit: contain;
@@ -119,6 +123,8 @@
 }
 
 .showcase-tooltip-data {
+    box-sizing: border-box;
+    max-width: 90vw;
     visibility: hidden;
     background-image: radial-gradient(circle at center,#313438, #171d23);
     border: 1px solid var(--border-blue);
@@ -179,4 +185,24 @@ h2.showcase-tooltip-header {
 
 .invisible {
     visibility: hidden;
+}
+
+@media only screen and (max-width: 400px) {
+    .showcase-image {
+        height: 70px;
+    }
+    .showcase-grid {
+        gap: 6px;
+    }
+    .showcase-tooltip-data {
+        width: 180px;
+        font-size: 13px;
+        padding: 8px;
+    }
+    h1.showcase-tooltip-header {
+        font-size: 15px;
+    }
+    h2.showcase-tooltip-header {
+        font-size: 13px;
+    }
 }

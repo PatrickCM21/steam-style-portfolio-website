@@ -498,3 +498,32 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media only screen and (max-width: 450px) {
+    .game-details-layout {
+        max-width: 95%;
+    }
+    .game-name {
+        font-size: 20px;
+    }
+    .game-play-block {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px;
+        text-align: center;
+    }
+    .play-now-btn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    .game-display-technologies {
+        padding: 12px;
+    }
+    .sys-req-grid {
+        grid-template-columns: 1fr;
+    }
+    .thumb-btn {
+        flex: 0 0 80px;
+        height: 45px;
+    }
+}

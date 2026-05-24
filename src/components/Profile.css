@@ -1,9 +1,12 @@
 main.profile {
     max-width: 940px;
+    width: calc(100% - 4px);
     margin: 20px auto 50px auto;
     color: var(--steam-text-primary);
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 #profile-block {
@@ -13,6 +16,7 @@ main.profile {
     padding: 24px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
 .profile-header {
@@ -26,12 +30,14 @@ main.profile {
     position: relative;
     width: 164px;
     height: 164px;
+    max-width: 100%;
     padding: 4px;
     box-sizing: border-box;
     background: #4e5766;
     border-radius: 4px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     transition: background 0.5s ease;
+    flex-shrink: 0;
 }
 
 /* Avatar Frame colors based on levels */
@@ -62,7 +68,8 @@ main.profile {
 }
 
 .name-description {
-    flex: 1 1 350px;
+    flex: 1 1 0;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -217,11 +224,13 @@ p.name {
     gap: 20px;
     flex-wrap: wrap;
     align-items: flex-start;
+    max-width: 100%;
 }
 
 .showcases {
     flex-grow: 1;
     max-width: 630px;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -231,12 +240,14 @@ p.name {
 .profile-featured-game-card {
     position: relative;
     width: 140px;
+    max-width: calc(50% - 6px);
     height: 70px;
     overflow: hidden;
     border-radius: 2px;
     border: 1px solid rgba(255,255,255,0.05);
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     background: #000;
+    box-sizing: border-box;
 }
 
 .profile-featured-game-card:hover {
@@ -288,7 +299,7 @@ p.name {
 
 .achievement-unlocked-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(54px, 1fr));
     gap: 12px;
 }
 
@@ -353,6 +364,7 @@ p.name {
     border-radius: 4px;
     border: 1px solid rgba(255,255,255,0.03);
     padding: 15px;
+    box-sizing: border-box;
 }
 
 .side-info-bar-title {
@@ -373,7 +385,7 @@ p.name {
 
 .profile-badge-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
     gap: 10px;
 }
 
@@ -474,11 +486,13 @@ p.name {
     padding: 8px 12px;
     border-radius: 2px;
     width: 180px;
+    max-width: 90vw;
     z-index: 1000;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
     transition: opacity 0.2s, visibility 0.2s;
     pointer-events: none;
     line-height: 1.4;
+    box-sizing: border-box;
 }
 
 .tooltip:hover .tooltip-text {
@@ -486,7 +500,22 @@ p.name {
     opacity: 1;
 }
 
+.tooltip-text[data-flip="right"] {
+    left: auto;
+    right: 0;
+    transform: none;
+}
+
+.tooltip-text[data-flip="left"] {
+    left: 0;
+    transform: none;
+}
+
 @media only screen and (max-width: 950px) {
+    main.profile {
+        margin: 2px auto;
+        padding-inline: 0;
+    }
     .content-block {
         flex-direction: column;
     }
@@ -497,19 +526,127 @@ p.name {
     .side-info-bar {
         width: 100%;
     }
+    .status-widget {
+        box-sizing: border-box;
+    }
 }
 
 @media only screen and (max-width: 600px) {
+    #profile-block {
+        padding: 16px;
+    }
     .profile-header {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        gap: 12px;
+    }
+    p.name {
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .name-description {
         align-items: center;
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .profile-summary {
+        margin: 0 0 10px 0;
     }
     .level {
         align-items: center;
         width: 100%;
+        gap: 10px;
+    }
+    #badge {
+        max-width: 220px;
+        margin: 0 auto;
+    }
+    .showcase-item-icon {
+        width: 80px;
+        height: 80px;
+    }
+    .profile-achievements-showcase {
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #profile-block {
+        padding: 10px;
+    }
+    .profile-pic-container {
+        width: 120px;
+        height: 120px;
+    }
+    .profile-user-name {
+        font-size: 20px;
+    }
+    p.name {
+        font-size: 11px;
+    }
+    .profile-summary {
+        font-size: 12px;
+    }
+    .social-img {
+        width: 18px;
+        height: 18px;
+    }
+    .level-lbl {
+        font-size: 20px;
+    }
+    .dot {
+        height: 32px;
+        width: 32px;
+        font-size: 13px;
+    }
+    #badge {
+        max-width: 180px;
+        padding: 8px 10px;
+    }
+    #badge > img {
+        width: 28px;
+        height: 28px;
+    }
+    .showcase-item-icon {
+        width: 64px;
+        height: 64px;
+        padding: 4px;
+    }
+    .profile-featured-game-card {
+        width: 100px;
+        height: 50px;
+    }
+    .showcase-header > h3 {
+        font-size: 16px;
+    }
+    .showcase-content-text {
+        font-size: 13px;
+    }
+    .side-info-bar-title {
+        font-size: 13px;
+    }
+    .profile-widget-panel {
+        padding: 10px;
+    }
+    .content-block {
+        gap: 12px;
+    }
+    .achievement-unlocked-grid {
+        gap: 8px;
+    }
+    .achievement-showcase-item .achievement-icon {
+        width: 42px;
+        height: 42px;
+    }
+    .profile-badge-item .badge-icon {
+        width: 36px;
+        height: 36px;
+    }
+    .profile-badge-list {
+        grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
+        gap: 6px;
     }
 }

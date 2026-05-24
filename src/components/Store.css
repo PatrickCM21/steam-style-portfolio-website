@@ -5,13 +5,14 @@ main.store {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Sub navigation matching Steam Store tab navigation */
 .store-sub-nav {
     background: linear-gradient(to right, #3d4450 0%, #2a475e 100%);
-    width: 100vw;
+    width: 100%;
     min-height: 35px;
     display: flex;
     justify-content: center;
@@ -398,7 +399,8 @@ main.store {
 
 /* Games List (Other Projects) */
 .games-list-background {
-    width: 100vw;
+    width: 100%;
+    box-sizing: border-box;
     background: linear-gradient(to bottom, rgba(42, 71, 94, 0.3) 0%, rgba(27, 40, 56, 0.3) 100%);
     display: flex;
     justify-content: center;
@@ -558,5 +560,42 @@ main.store {
 @media only screen and (max-width: 800px) {
     .embla__container {
         height: 200px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .featured {
+        max-width: 95%;
+    }
+    .games-list {
+        max-width: 95%;
+    }
+    .store-sub-nav-content {
+        max-width: 95%;
+    }
+    .game-main-img {
+        height: 45px;
+        width: 90px;
+    }
+    .game-list-review {
+        width: auto;
+    }
+    .store-search-input {
+        width: 100px;
+    }
+    .embla__container {
+        height: 180px;
+    }
+    .slide-data {
+        padding: 10px;
+    }
+    .slide-data h2 {
+        font-size: 14px;
+    }
+    .slide-gameplay-showcase {
+        display: none;
+    }
+    .slide-meta {
+        font-size: 9px;
     }
 }

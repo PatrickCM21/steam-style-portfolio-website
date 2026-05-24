@@ -1,7 +1,8 @@
 .wishlist-page {
     margin: 0 auto;
     padding-bottom: 50px;
-    width: 100vw;
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -315,5 +316,27 @@
     }
     .wishlist-action-buttons {
         width: 60%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .wishlist-container {
+        max-width: 95%;
+    }
+    .wishlist-header {
+        padding: 12px;
+        gap: 10px;
+    }
+    .wishlist-title-block h2 {
+        font-size: 18px;
+    }
+    .wishlist-filter-bar {
+        padding: 8px 10px;
+    }
+    .wishlist-item {
+        padding: 10px;
+    }
+    .wishlist-item-actions {
+        width: 100%;
     }
 }

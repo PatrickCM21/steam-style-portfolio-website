@@ -2,7 +2,8 @@
 .header-top-bar {
     background-color: #171a21;
     height: 44px; /* Increased from 30px to fit larger button */
-    width: 100vw;
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,7 +54,8 @@
 header {
     background-color: #171a21;
     color: #dcdedf;
-    width: 100vw;
+    width: 100%;
+    box-sizing: border-box;
     height: 74px;
     display: flex;
     justify-content: center;
@@ -277,7 +279,7 @@ footer {
     color: #8f98a0;
     padding-block: 30px;
     margin-top: auto; /* Pushed to bottom of the viewport when content is short */
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     border-top: 1px solid #2a475e;
@@ -367,5 +369,20 @@ footer {
     }
     .footer-logo {
         height: 30px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .header-nav-container {
+        max-width: 95%;
+    }
+    .footer-content {
+        max-width: 95%;
+    }
+    footer {
+        padding-block: 20px;
+    }
+    .footer-main-row {
+        gap: 8px;
     }
 }
