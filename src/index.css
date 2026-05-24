@@ -20,7 +20,8 @@ html, body {
   padding: 0;
   background-color: var(--steam-bg-body);
   background-image: radial-gradient(circle at top, #1b2838 0%, #171a21 100%);
-  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: "Motiva Sans", "Roboto", Arial, sans-serif;
   color: var(--steam-text-primary);
   min-height: 100vh;
