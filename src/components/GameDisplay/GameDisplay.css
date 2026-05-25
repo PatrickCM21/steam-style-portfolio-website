@@ -80,7 +80,7 @@
     flex-grow: 1;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    height: 65px;
+    height: 62px;
 }
 
 .game-display-image-slider::-webkit-scrollbar {
@@ -525,8 +525,15 @@
     .sys-req-grid {
         grid-template-columns: 1fr;
     }
+    .game-display-image-slider {
+        height: 45px;
+    }
     .thumb-btn {
         flex: 0 0 80px;
+        height: 45px;
+        background-color: #000000;
+    }
+    .scroll-btn {
         height: 45px;
     }
 }

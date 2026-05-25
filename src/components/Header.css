@@ -1,7 +1,8 @@
 /* Header Top Bar styled like Steam */
 .header-top-bar {
     background-color: #171a21;
-    height: 44px; /* Increased from 30px to fit larger button */
+    height: 44px;
+    /* Increased from 30px to fit larger button */
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -31,12 +32,14 @@
     color: #ffffff !important;
     text-decoration: none;
     font-weight: bold;
-    padding: 6px 16px; /* Larger padding */
+    padding: 6px 16px;
+    /* Larger padding */
     border-radius: 2px;
-    font-size: 12px; /* Bigger font-size */
+    font-size: 12px;
+    /* Bigger font-size */
     line-height: 16px;
     transition: background-color 0.2s, transform 0.1s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .install-resume-btn:hover {
@@ -45,7 +48,8 @@
 }
 
 .install-icon {
-    width: 13px; /* Bigger icon */
+    width: 13px;
+    /* Bigger icon */
     height: 13px;
     filter: brightness(0) invert(1);
 }
@@ -60,7 +64,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .header-nav-container {
@@ -86,7 +90,7 @@ nav {
     flex-grow: 1;
 }
 
-nav > ul {
+nav>ul {
     list-style-type: none;
     font-weight: 500;
     display: flex;
@@ -96,7 +100,7 @@ nav > ul {
     padding: 0;
 }
 
-ul > li {
+ul>li {
     position: relative;
 }
 
@@ -119,11 +123,11 @@ ul > li {
 }
 
 /* Make sure dropdown underlines only display when selected */
-.dropdown a > hr {
+.dropdown a>hr {
     display: none;
 }
 
-.dropdown a.selected > hr {
+.dropdown a.selected>hr {
     display: block;
     position: absolute;
     bottom: -4px;
@@ -144,7 +148,7 @@ ul > li {
     font-size: 12px;
     font-weight: 400;
     opacity: 0;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
     top: 100%;
     left: 0;
     border-radius: 2px;
@@ -201,7 +205,7 @@ ul > li {
     display: none;
 }
 
-.sidebar-btn > img {
+.sidebar-btn>img {
     width: 26px;
     height: auto;
 }
@@ -221,7 +225,7 @@ ul > li {
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.5);
 }
 
-#sidebar-profile > a {
+#sidebar-profile>a {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -232,20 +236,20 @@ ul > li {
     border-bottom: 1px solid #2a475e;
 }
 
-#sidebar-profile > a > img {
+#sidebar-profile>a>img {
     width: 40px;
     height: 40px;
     border: 2px solid var(--steam-light-blue);
     object-fit: cover;
 }
 
-#sidebar-profile > a > p {
+#sidebar-profile>a>p {
     font-weight: 500;
     font-size: 16px;
     margin: 0;
 }
 
-.sidebar > a {
+.sidebar>a {
     color: #9dadb9;
     padding: 16px 20px;
     text-decoration: none;
@@ -255,7 +259,8 @@ ul > li {
     font-weight: 500;
 }
 
-.sidebar > a:hover, .sidebar > a.side-selected {
+.sidebar>a:hover,
+.sidebar>a.side-selected {
     color: #ffffff;
     background-color: rgba(255, 255, 255, 0.05);
 }
@@ -278,7 +283,8 @@ footer {
     background-color: #171a21;
     color: #8f98a0;
     padding-block: 30px;
-    margin-top: auto; /* Pushed to bottom of the viewport when content is short */
+    margin-top: auto;
+    /* Pushed to bottom of the viewport when content is short */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -332,6 +338,7 @@ footer {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
+    justify-content: center;
     color: #61686d;
 }
 
@@ -350,23 +357,29 @@ footer {
         display: block;
         margin-right: 15px;
     }
+
     nav {
         display: none;
     }
+
     .header-profile-link {
         display: none;
     }
+
     .header-top-bar {
         display: none;
     }
+
     header {
         height: 60px;
     }
+
     .footer-main-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
+
     .footer-logo {
         height: 30px;
     }
@@ -376,12 +389,15 @@ footer {
     .header-nav-container {
         max-width: 95%;
     }
+
     .footer-content {
         max-width: 95%;
     }
+
     footer {
         padding-block: 20px;
     }
+
     .footer-main-row {
         gap: 8px;
     }

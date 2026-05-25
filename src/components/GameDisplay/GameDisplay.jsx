@@ -158,7 +158,7 @@ export default function GameDisplay({ game }) {
                     <div className="game-play-block">
                         <div className="play-block-left">
                             <h2>Play {game.name}</h2>
-                            <p>Experience the project directly in your browser or explore the codebase.</p>
+                            <p>Experience the project directly in your browser.</p>
                         </div>
                         <div className="play-block-right">
                             {game.link ? (

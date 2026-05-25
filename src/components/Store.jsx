@@ -59,6 +59,12 @@ export default function Store() {
 
     const mobileMode = windowSize.width < 800 ? true : false
 
+    useEffect(() => {
+        if (emblaApi) {
+            emblaApi.reInit()
+        }
+    }, [emblaApi, mobileMode])
+
     function getReviewLabel(gameId) {
         const rating = starsByGame[gameId];
         if (rating === undefined || rating === -1) return { text: "Very Positive", class: "positive" };
