@@ -327,6 +327,9 @@
     padding: 3px 8px;
     border-radius: 2px;
     font-size: 11px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.15s, color 0.15s;
 }
 
 .right-tag:hover {

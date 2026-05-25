@@ -6,6 +6,17 @@ import { useCookies } from 'react-cookie'
 import { Link } from 'react-router'
 
 export default function GameDisplay({ game }) {
+    // Map from lowercase technology name (in JSON) to display category name used in Store filter
+    const techToCategoryMap = {
+        'react': 'React',
+        'react native': 'React Native',
+        'javascript': 'JavaScript',
+        'python': 'Python',
+        'sqlite': 'SQLite',
+        'chatgpt api': 'ChatGPT API',
+        'html': 'HTML/CSS',
+        'css': 'HTML/CSS',
+    }
     const [cookies, setCookie] = useCookies(['gameStars', 'wishlist'])
     const starsByGame = cookies.gameStars ?? {}
     const wishlistIds = cookies.wishlist ?? []
@@ -231,9 +242,21 @@ export default function GameDisplay({ game }) {
                         <div className="right-tags-block">
                             <span className="right-meta-lbl block mb-6">Popular user-defined tags for this product:</span>
                             <div className="right-tags-list">
-                                {game.technologies.map(tech => (
-                                    <span className="right-tag" key={tech}>{tech}</span>
-                                ))}
+                                {game.technologies.map(tech => {
+                                    const category = techToCategoryMap[tech.toLowerCase()]
+                                    return category ? (
+                                        <Link
+                                            to={`/store?category=${encodeURIComponent(category)}`}
+                                            className="right-tag"
+                                            key={tech}
+                                            title={`Browse ${category} projects`}
+                                        >
+                                            {tech}
+                                        </Link>
+                                    ) : (
+                                        <span className="right-tag" key={tech}>{tech}</span>
+                                    )
+                                })}
                             </div>
                         </div>
 

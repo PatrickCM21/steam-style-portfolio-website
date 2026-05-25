@@ -2,7 +2,7 @@ import projects from '../assets/projects.json'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import { useEffect, useCallback, useRef, useState } from 'react'
-import { Link } from 'react-router'
+import { Link, useSearchParams } from 'react-router'
 import { MdNavigateNext } from "react-icons/md";
 import { DotButton, useDotButton } from './Carousel/CarouselButton'
 import { useCookies } from 'react-cookie'
@@ -21,7 +21,11 @@ export default function Store() {
         height: window.innerHeight
     })
 
-    const [activeCategory, setActiveCategory] = useState("All")
+    const [searchParams, setSearchParams] = useSearchParams()
+    const [activeCategory, setActiveCategory] = useState(() => {
+        const urlCat = searchParams.get('category')
+        return urlCat && categories.includes(urlCat) ? urlCat : "All"
+    })
     const [cookies] = useCookies(['wishlist', 'gameStars'])
     const wishlistIds = cookies.wishlist ?? []
     const starsByGame = cookies.gameStars ?? {}
@@ -75,11 +79,8 @@ export default function Store() {
 
     const featuredProjects = projects.filter(project => project.featured && matchTech(project.technologies, activeCategory))
     
-    // Non-featured projects (when "All" is active) or ALL matching projects (when a category is active)
+    // All matching projects (featured or not) shown in the list section
     const listProjects = projects.filter(project => {
-        if (activeCategory === "All") {
-            return !project.featured
-        }
         return matchTech(project.technologies, activeCategory)
     })
 
@@ -189,7 +190,14 @@ export default function Store() {
                     {categories.map(cat => (
                         <button 
                             key={cat} 
-                            onClick={() => setActiveCategory(cat)}
+                            onClick={() => {
+                                setActiveCategory(cat)
+                                if (cat === "All") {
+                                    setSearchParams({})
+                                } else {
+                                    setSearchParams({ category: cat })
+                                }
+                            }}
                             className={`store-sub-link ${activeCategory === cat ? 'active' : ''}`}
                         >
                             {cat}
@@ -221,7 +229,7 @@ export default function Store() {
             <div className='games-list-background'>
                 <section className='games-list'>
                     <h3 className="section-title">
-                        {activeCategory === "All" ? "Other Projects" : `Projects using ${activeCategory}`}
+                        {activeCategory === "All" ? "All Projects" : `Projects using ${activeCategory}`}
                     </h3>
                     <div className="games-list-container">
                         {nonFeaturedGames.length > 0 ? nonFeaturedGames : (
