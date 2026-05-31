@@ -25,23 +25,28 @@ export default function Profile() {
     const [level, setLevel] = useState(42)
     const [cookies] = useCookies(['gameStars'])
     const starsByGame = cookies.gameStars ?? {}
+    const profileRef = useRef(null)
     const tooltips = useRef([])
     const tooltipsLen = useRef(0)
     const { width, height } = useWindowSize()
-
+ 
     tooltips.current = [];
     tooltipsLen.current = 0;
-
+ 
     function increaseLevel() {
         setLevel(prevLevel => prevLevel + 1);
     }
-
+ 
     useLayoutEffect(() => {
+        const profileEl = profileRef.current
+        if (!profileEl) return
+        const profileRect = profileEl.getBoundingClientRect()
+
         tooltips.current.filter(Boolean).forEach((itemRef) => {
             const rect = itemRef.getBoundingClientRect()
-            if (rect.right > window.innerWidth) {
+            if (rect.right > profileRect.right) {
                 itemRef.dataset.flip = "right"
-            } else if (rect.left < 0) {
+            } else if (rect.left < profileRect.left) {
                 itemRef.dataset.flip = "left"
             } else {
                 delete itemRef.dataset.flip;
@@ -147,7 +152,7 @@ export default function Profile() {
     const levelClass = getLevelClass(level)
 
     return (
-        <main className='profile'>
+        <main className='profile' ref={profileRef}>
             {level === 69 && confettiAdapted}
 
             {/* Upper Profile Container (Header Banner overlay) */}

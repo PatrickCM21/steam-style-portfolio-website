@@ -87,5 +87,19 @@
             "/gameplay_images/longlingo/screenshot_6.png"
         ],
         "featured": true
+    },
+    {
+        "id": 9,
+        "name": "Trackle",
+        "src": "/projects_icons/trackle.png",
+        "link": "https://playtrackle.app",
+        "description": "Guess the shortest path between two Sydney train stations. A daily puzzle game for rail enthusiasts.",
+        "technologies": ["react", "next.js", "javascript", "tailwind css", "html", "css"],
+        "gameplayImages": [
+            "/gameplay_images/trackle/1.png",
+            "/gameplay_images/trackle/2.png",
+            "/gameplay_images/trackle/3.png"
+        ],
+        "featured": true
     }
 ]

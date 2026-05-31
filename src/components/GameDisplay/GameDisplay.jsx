@@ -20,7 +20,7 @@ export default function GameDisplay({ game }) {
     const [cookies, setCookie] = useCookies(['gameStars', 'wishlist'])
     const starsByGame = cookies.gameStars ?? {}
     const wishlistIds = cookies.wishlist ?? []
-    
+
     const initialGameStars = starsByGame[game.id] ?? -1
     const isWishlisted = wishlistIds.includes(game.id)
 
@@ -52,9 +52,9 @@ export default function GameDisplay({ game }) {
     const gameplayImages = game.gameplayImages.map((image, index) => {
         return (
             <button onClick={() => updateDisplayedImage(index)} key={index} className="thumb-btn">
-                <img 
-                    src={image} 
-                    alt={`${game.name} thumbnail`} 
+                <img
+                    src={image}
+                    alt={`${game.name} thumbnail`}
                     className={selectedImage === index ? "img-selected" : ""}
                 />
             </button>
@@ -90,9 +90,9 @@ export default function GameDisplay({ game }) {
         const activeIndex = starHovering ? hoverStarCount : starCount
         const isFilled = index <= activeIndex
         return (
-            <button 
-                className="star-btn" 
-                onClick={() => updateStars(index)} 
+            <button
+                className="star-btn"
+                onClick={() => updateStars(index)}
                 onMouseEnter={() => setHoverStarCount(index)}
                 key={index}
                 aria-label={`Rate ${index + 1} stars`}
@@ -129,30 +129,36 @@ export default function GameDisplay({ game }) {
                 {/* Left Column: Media Player */}
                 <div className='game-display-left'>
                     <div className="main-image-container">
-                        <img className='main-image' src={game.gameplayImages[selectedImage]} alt={`${game.name} gameplay`} />
+                        <img
+                            className='main-image'
+                            src={game.gameplayImages && game.gameplayImages.length > 0 ? game.gameplayImages[selectedImage] : game.src}
+                            alt={`${game.name} gameplay`}
+                        />
                     </div>
-                    
-                    <div className="scroller-row-container">
-                        <button className='scroll-btn scroll-btn-left'
-                            onMouseEnter={() => setLeftButtonHover(true)}
-                            onMouseLeave={() => setLeftButtonHover(false)}
-                            onClick={() => updateImageByButton(-1)}
-                            aria-label="Scroll left"
-                        >
-                            <IoTriangle size={10} color={leftButtonHover ? "#ffffff" : "#407899"} style={{transform:"rotate(-90deg)"}}/>
-                        </button>
-                        <div className='game-display-image-slider' ref={scrollerRef} tabIndex={0}>
-                            {gameplayImages}
+
+                    {game.gameplayImages && game.gameplayImages.length > 0 && (
+                        <div className="scroller-row-container">
+                            <button className='scroll-btn scroll-btn-left'
+                                onMouseEnter={() => setLeftButtonHover(true)}
+                                onMouseLeave={() => setLeftButtonHover(false)}
+                                onClick={() => updateImageByButton(-1)}
+                                aria-label="Scroll left"
+                            >
+                                <IoTriangle size={10} color={leftButtonHover ? "#ffffff" : "#407899"} style={{ transform: "rotate(-90deg)" }} />
+                            </button>
+                            <div className='game-display-image-slider' ref={scrollerRef} tabIndex={0}>
+                                {gameplayImages}
+                            </div>
+                            <button className='scroll-btn scroll-btn-right'
+                                onMouseEnter={() => setRightButtonHover(true)}
+                                onMouseLeave={() => setRightButtonHover(false)}
+                                onClick={() => updateImageByButton(1)}
+                                aria-label="Scroll right"
+                            >
+                                <IoTriangle size={10} color={rightButtonHover ? "#ffffff" : "#407899"} style={{ transform: "rotate(90deg)" }} />
+                            </button>
                         </div>
-                        <button className='scroll-btn scroll-btn-right'
-                            onMouseEnter={() => setRightButtonHover(true)}
-                            onMouseLeave={() => setRightButtonHover(false)}
-                            onClick={() => updateImageByButton(1)}
-                            aria-label="Scroll right"
-                        >
-                            <IoTriangle size={10} color={rightButtonHover ? "#ffffff" : "#407899"} style={{transform:"rotate(90deg)"}}/>
-                        </button>
-                    </div>
+                    )}
 
                     {/* Action Block - Play Game Box */}
                     <div className="game-play-block">
@@ -178,7 +184,6 @@ export default function GameDisplay({ game }) {
                         <h2 className="about-section-header">About This Game</h2>
                         <div className="about-section-content">
                             <p>{game.description}</p>
-                            <p>This project was crafted as part of Patrick Crown-Milliss's engineering portfolio. Built with a high standard of code organization, responsiveness, and interaction, it demonstrates capabilities in frontend and backend architecture.</p>
                         </div>
                     </div>
 
@@ -214,7 +219,7 @@ export default function GameDisplay({ game }) {
                 {/* Right Column: Capsule Metadata */}
                 <div className='game-display-right'>
                     <img src={game.src} alt={`${game.name} capsule`} className="right-capsule-img" />
-                    
+
                     <div className="right-meta-details">
                         <div className="right-meta-row">
                             <span className="right-meta-lbl">All Reviews:</span>
@@ -261,7 +266,7 @@ export default function GameDisplay({ game }) {
                         </div>
 
                         {/* Wishlist Button Toggle */}
-                        <button 
+                        <button
                             className={`wishlist-toggle-btn ${isWishlisted ? "in-wishlist" : ""}`}
                             onClick={toggleWishlist}
                         >
@@ -273,7 +278,7 @@ export default function GameDisplay({ game }) {
                     <div className="rating-box-widget">
                         <h3>Would you recommend this project?</h3>
                         <p>Share your rating by clicking on the stars below to simulate leaving a Steam review.</p>
-                        <div 
+                        <div
                             className="stars-widget-row"
                             onMouseEnter={() => setStarHovering(true)}
                             onMouseLeave={() => {

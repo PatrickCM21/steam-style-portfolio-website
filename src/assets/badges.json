@@ -48,5 +48,10 @@
         "name": "React Native",
         "src": "/badge_icons/React.svg",
         "description": "Used to develop the cross-platform LongLingo app."
+    },
+    {
+        "name": "Next.js",
+        "src": "/badge_icons/NextJS.png",
+        "description": "Used to build the fullstack Trackle puzzle game."
     }
 ]
