@@ -53,5 +53,10 @@
         "name": "Next.js",
         "src": "/badge_icons/NextJS.png",
         "description": "Used to build the fullstack Trackle puzzle game."
+    },
+    {
+        "name": "Phaser",
+        "src": "/badge_icons/phaser.png",
+        "description": "Used to build the Trolley Problem game for the Reddit x Phaser Game Jam."
     }
 ]

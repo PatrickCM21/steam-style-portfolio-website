@@ -6,8 +6,9 @@ import { Link, useSearchParams } from 'react-router'
 import { MdNavigateNext } from "react-icons/md";
 import { DotButton, useDotButton } from './Carousel/CarouselButton'
 import { useCookies } from 'react-cookie'
+import { getGameplayImages } from '../utils/gameplayImages'
 
-const categories = ["All", "React", "React Native", "JavaScript", "Python", "SQLite", "ChatGPT API", "HTML/CSS"]
+const categories = ["All", "React", "React Native", "JavaScript", "Python", "SQLite", "ChatGPT API", "HTML/CSS", "Phaser"]
 
 export default function Store() {
     const autoplay = useRef(
@@ -91,7 +92,8 @@ export default function Store() {
     })
 
     const gameElements = featuredProjects.map(project => {
-        const featuredImages = project.gameplayImages.slice(0, 4).map((image, index) => {
+        const images = getGameplayImages(project.id)
+        const featuredImages = images.slice(0, 4).map((image, index) => {
             return <img key={index} src={image} alt={`${project.name} gameplay - ${index}`} className="slide-gameplay-thumb"></img>
         })
 

@@ -4,6 +4,7 @@ import React from 'react'
 import { IoTriangle, IoStar, IoStarOutline } from "react-icons/io5"
 import { useCookies } from 'react-cookie'
 import { Link } from 'react-router'
+import { getGameplayImages } from '../../utils/gameplayImages'
 
 export default function GameDisplay({ game }) {
     // Map from lowercase technology name (in JSON) to display category name used in Store filter
@@ -16,6 +17,7 @@ export default function GameDisplay({ game }) {
         'chatgpt api': 'ChatGPT API',
         'html': 'HTML/CSS',
         'css': 'HTML/CSS',
+        'phaser': 'Phaser',
     }
     const [cookies, setCookie] = useCookies(['gameStars', 'wishlist'])
     const starsByGame = cookies.gameStars ?? {}
@@ -23,6 +25,7 @@ export default function GameDisplay({ game }) {
 
     const initialGameStars = starsByGame[game.id] ?? -1
     const isWishlisted = wishlistIds.includes(game.id)
+    const images = getGameplayImages(game.id)
 
     const [selectedImage, setSelectedImage] = React.useState(0)
     const [leftButtonHover, setLeftButtonHover] = React.useState(false)
@@ -49,7 +52,7 @@ export default function GameDisplay({ game }) {
         setSelectedImage(index)
     }
 
-    const gameplayImages = game.gameplayImages.map((image, index) => {
+    const gameplayImages = images.map((image, index) => {
         return (
             <button onClick={() => updateDisplayedImage(index)} key={index} className="thumb-btn">
                 <img
@@ -103,7 +106,7 @@ export default function GameDisplay({ game }) {
     })
 
     function updateImageByButton(dir) {
-        const nextIndex = Math.min(Math.max(selectedImage + dir, 0), game.gameplayImages.length - 1)
+        const nextIndex = Math.min(Math.max(selectedImage + dir, 0), images.length - 1)
         setSelectedImage(nextIndex)
         const el = scrollerRef.current
         if (!el) return
@@ -131,12 +134,12 @@ export default function GameDisplay({ game }) {
                     <div className="main-image-container">
                         <img
                             className='main-image'
-                            src={game.gameplayImages && game.gameplayImages.length > 0 ? game.gameplayImages[selectedImage] : game.src}
+                            src={images && images.length > 0 ? images[selectedImage] : game.src}
                             alt={`${game.name} gameplay`}
                         />
                     </div>
 
-                    {game.gameplayImages && game.gameplayImages.length > 0 && (
+                    {images && images.length > 0 && (
                         <div className="scroller-row-container">
                             <button className='scroll-btn scroll-btn-left'
                                 onMouseEnter={() => setLeftButtonHover(true)}
@@ -276,8 +279,7 @@ export default function GameDisplay({ game }) {
 
                     {/* Review Ratings Box */}
                     <div className="rating-box-widget">
-                        <h3>Would you recommend this project?</h3>
-                        <p>Share your rating by clicking on the stars below to simulate leaving a Steam review.</p>
+                        <h3>Rate this Project!</h3>
                         <div
                             className="stars-widget-row"
                             onMouseEnter={() => setStarHovering(true)}

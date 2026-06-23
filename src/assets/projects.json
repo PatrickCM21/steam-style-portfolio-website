@@ -5,8 +5,13 @@
         "src": "/projects_icons/chineseRoom.png",
         "link": "https://chinese-room-ai-game-client.vercel.app/",
         "description": "Learn John Searl's Chinese Room Argument to find out whether AI will ever become sentient. An AI-powered app built for 'Day of AI Australia'.",
-        "technologies": ["chatgpt api", "html", "css", "javascript", "react"],
-        "gameplayImages": ["/gameplay_images/chinese_room/chineseRoomGameplay_1.png", "/gameplay_images/chinese_room/chineseRoomGameplay_2.png", "/gameplay_images/chinese_room/chineseRoomGameplay_3.png", "/gameplay_images/chinese_room/chineseRoomGameplay_4.png", "/gameplay_images/chinese_room/chineseRoomGameplay_5.png", "/gameplay_images/chinese_room/chineseRoomGameplay_6.png"],
+        "technologies": [
+            "chatgpt api",
+            "html",
+            "css",
+            "javascript",
+            "react"
+        ],
         "featured": true
     },
     {
@@ -15,8 +20,13 @@
         "src": "/projects_icons/AIDinner.png",
         "link": "https://curiouscocky2.pythonanywhere.com/dinner",
         "description": "An AI-powered dinner table conversation with whoever you want, alive or dead, real or fictional. You can set the context, discussion, and even reply yourself!",
-        "technologies": ["chatgpt api", "python", "html", "css", "javascript"],
-        "gameplayImages": ["/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_1.png", "/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_2.png", "/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_3.png", "/gameplay_images/ai_dinner_table/AiDinnerTableGameplay_4.png"],
+        "technologies": [
+            "chatgpt api",
+            "python",
+            "html",
+            "css",
+            "javascript"
+        ],
         "featured": false
     },
     {
@@ -25,8 +35,11 @@
         "src": "/projects_icons/cockatooClicker.png",
         "link": "https://curiouscocky2.pythonanywhere.com/cockatoo_clicker",
         "description": "Inspired by the classic 'Cookie Clicker', this reimagines world domination by the cookie eaters, cockatoo's. Leverage the power of Kookabura's and luxury cages to exponentially grow the cockatoo population.",
-        "technologies": ["html", "css", "javascript"],
-        "gameplayImages": ["/gameplay_images/cockatoo_clicker/cockatooClickerGameplay_1.png", "/gameplay_images/cockatoo_clicker/cockatooClickerGameplay_2.png", "/gameplay_images/cockatoo_clicker/cockatooClickerGameplay_3.png"],
+        "technologies": [
+            "html",
+            "css",
+            "javascript"
+        ],
         "featured": false
     },
     {
@@ -35,8 +48,13 @@
         "src": "/projects_icons/ghostNotes.png",
         "link": "https://curiouscocky2.pythonanywhere.com/ghost_notes",
         "description": "Send and receive a mystery note from a random stranger!",
-        "technologies": ["sqlite", "html", "css", "javascript", "python"],
-        "gameplayImages":  ["/gameplay_images/ghost_notes/ghostNotesGameplay_1.png", "/gameplay_images/ghost_notes/ghostNotesGameplay_2.png", "/gameplay_images/ghost_notes/ghostNotesGameplay_3.png"],
+        "technologies": [
+            "sqlite",
+            "html",
+            "css",
+            "javascript",
+            "python"
+        ],
         "featured": false
     },
     {
@@ -45,29 +63,33 @@
         "src": "/projects_icons/hiddenGemFinder.png",
         "link": "https://curiouscocky2.pythonanywhere.com/steam_gems",
         "description": "Have an overflowing Steam library but still don't know what to play? Use this hidden gem finder to find the top rated games you still haven't given a chance!",
-        "technologies": ["html", "css", "javascript", "python"],
-        "gameplayImages": ["/gameplay_images/gem_finder/gemFinderGameplay_1.png", "/gameplay_images/gem_finder/gemFinderGameplay_2.png", "/gameplay_images/gem_finder/gemFinderGameplay_3.png"],
+        "technologies": [
+            "html",
+            "css",
+            "javascript",
+            "python"
+        ],
         "featured": false
-    }
-    ,
+    },
     {
         "id": 5,
         "name": "Sushi Cat - Discord Bot",
         "src": "/projects_icons/sushiCatDiscordBot.png",
         "description": "A Discord bot which helps you track your to-do-list items, manage your study time with a Pomodoro-style timer, and get a series of random dad jokes to distract you from said study.",
-        "technologies": ["python"],
-        "gameplayImages": ["/gameplay_images/sushi_cat/sushiCatGameplay_1.png", "/gameplay_images/sushi_cat/sushiCatGameplay_2.png", "/gameplay_images/sushi_cat/sushiCatGameplay_3.png"],
+        "technologies": [
+            "python"
+        ],
         "link": "",
         "featured": false
     },
     {
-    
         "id": 6,
         "name": "Gudetama's Escape",
         "src": "/projects_icons/gudetamasEscape.png",
         "description": "A video game built for my girlfriend to celebrate our first christmas after almost one year of dating. Play as a recently won claw machine plushie who seeks to escape his new home, my uni dorm room.",
-        "technologies": ["gamemaker"],
-        "gameplayImages": ["/gameplay_images/gudetamas_escape/gudetamaGameplay_2.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_3.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_4.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_5.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_6.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_7.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_8.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_9.png", "/gameplay_images/gudetamas_escape/gudetamaGameplay_10.png"],
+        "technologies": [
+            "gamemaker"
+        ],
         "link": "",
         "featured": false
     },
@@ -77,14 +99,10 @@
         "src": "/projects_icons/longlingo.png",
         "link": "https://apps.apple.com/om/app/longlingo-learn-chinese/id6761418443",
         "description": "LongLingo is a focused, spaced-repetition Chinese flashcard application designed to help users efficiently learn Mandarin Chinese vocabulary. Utilizing the science-backed FSRS (Free Spaced Repetition Scheduler) algorithm, it provides HSK-aligned progress tracking, Simplified/Traditional character toggles, Pinyin helpers, and integrated audio pronunciation without the need for manual deck creation.",
-        "technologies": ["react native", "javascript", "react"],
-        "gameplayImages": [
-            "/gameplay_images/longlingo/screenshot_1.png",
-            "/gameplay_images/longlingo/screenshot_2.png",
-            "/gameplay_images/longlingo/screenshot_3.png",
-            "/gameplay_images/longlingo/screenshot_4.png",
-            "/gameplay_images/longlingo/screenshot_5.png",
-            "/gameplay_images/longlingo/screenshot_6.png"
+        "technologies": [
+            "react native",
+            "javascript",
+            "react"
         ],
         "featured": true
     },
@@ -94,11 +112,27 @@
         "src": "/projects_icons/trackle.png",
         "link": "https://playtrackle.app",
         "description": "Guess the shortest path between two Sydney train stations. A daily puzzle game for rail enthusiasts.",
-        "technologies": ["react", "next.js", "javascript", "tailwind css", "html", "css"],
-        "gameplayImages": [
-            "/gameplay_images/trackle/1.png",
-            "/gameplay_images/trackle/2.png",
-            "/gameplay_images/trackle/3.png"
+        "technologies": [
+            "react",
+            "next.js",
+            "javascript",
+            "tailwind css",
+            "html",
+            "css"
+        ],
+        "featured": true
+    },
+    {
+        "id": 10,
+        "name": "The Trolley Problem",
+        "src": "/projects_icons/trolley.png",
+        "link": "https://www.reddit.com/r/trolleyproblemgame/s/aQpbDJqG2S",
+        "description": "Will you pull the lever? Built for the Reddit x Phaser Game Jam, this game brings classic moral dilemmas to life, challenging players to make agonizing choices and engage in deep community debate. Cast your vote, defend your ethics, and see how your decisions stack up against the rest of the world!",
+        "technologies": [
+            "phaser",
+            "javascript",
+            "html",
+            "css"
         ],
         "featured": true
     }
